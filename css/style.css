@@ -50,23 +50,23 @@ body{
   color: white;
 }
 .header-login-button {
-  background-color: white;
+  background-color: rgb(241, 241, 241);
   color: black;
   border: none;
-  border-radius: 8px;
+  border-radius: 5px;
   cursor: pointer;
-  font-weight: bold;
+  font-weight: 600px;
   padding: 10px;
   font-size: 16px;
 }
 .header-signup-button {
-  background-color: white;
+  background-color: rgb(241, 241, 241);
   color: black;
   border: none;
-  border-radius: 8px;
+  border-radius: 5px;
   padding: 10px;
   font-size: 16px;
-  font-weight: bold;
+  font-weight: 600px;
   cursor: pointer;
   margin-left: 20px;
 }
@@ -78,12 +78,12 @@ body{
 .header-login-button:hover,
 .header-signup-button:hover {
   background-color: var(--main-color);
-  color: white;
-  outline: 2px solid white;
+  color: rgb(255, 255, 255);
+  outline: 1px solid rgb(225, 219, 219);
 }
 .header-login-button:focus,
 .header-signup-button:focus {
-  outline: 2px solid black;
+  outline: 2px solid rgb(248, 247, 247);
 }
 .header-title{
   margin-left: 20px;
@@ -208,6 +208,21 @@ body{
     
     
    
+}
+.hero_titles{
+  font-size: 48px;
+  font-weight: bolder;
+  margin-bottom: 20px;
+}
+.primary_btn{
+  border: none;
+  background: var(--main-color);
+  padding: 8px;
+  border-radius: 5px;
+  margin-top: 5px;
+  cursor: pointer;
+  font-weight: 600px;
+  margin-left: 5rem;
 }
 .secondary__btn {
   border: none;
