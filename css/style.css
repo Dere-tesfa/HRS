@@ -134,7 +134,7 @@ body{
 /* Hero / responsive background */
 .hero{
     position: relative;
-    min-height: 70vh;
+    min-height: 90vh;
     display: flex;
     align-items: center;
     background-image: url("../images/hero.jpg");
@@ -241,7 +241,26 @@ body{
     border-radius: 10px;
   padding: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  
   }
+  .show{
+      animation: apear both ;
+    animation-timeline: view(60vh 20vh);
+
+  }
+  @keyframes apear {
+    from{
+     
+      transform: translateY(200px);
+      transition: ease-in;
+    }
+    to{
+     
+      transform: translateY(0);
+      transition: ease-out;
+    }
+  }
+
   .our__services .our_title{
     text-align: center;
     margin-bottom: 30px;
@@ -257,4 +276,15 @@ body{
     align-items: center;
     gap: 30px;
   }
- 
+ .our_service:hover{
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px);
+    transition: all 0.3s ease;
+    cursor: pointer;
+ }
+ .our_service i{
+    font-size: 40px;
+    color: blue;
+   margin-left: 60px;
+   
+ }
