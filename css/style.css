@@ -8,7 +8,8 @@
 }
 body{
   margin: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  
 }
 /* header */
 .header{
@@ -40,10 +41,10 @@ body{
   list-style: none;
 }
 .header-nav-items a{
-  color: black;
+  color: rgb(60, 57, 57);
   text-decoration: none;
   font-size: 18px;
-  font-weight: bold;
+  font-weight: lighter;
 }
 .header-nav-items a:hover{
   color: white;
@@ -111,16 +112,25 @@ body{
   align-items: center;
   margin-right: 30px;
 }
-.social-media-icon {
-  width: 50px;
-  height: 50px;
-}
 
-.social-media-icon:hover {
-  transform: scale(1.1);
-  transition: transform 0.3s;
+.fa-instagram{
+  color:rgb(143, 15, 15);
+    font-size: 30px;
 }
+.fa-facebook{
+  color: rgb(15, 54, 143);
+    font-size: 30px;  
+  
 
+}
+.fa-twitter{
+  color: rgb(15, 143, 231);
+    font-size: 30px;  
+}
+.fa-linkedin{
+  color: rgb(15, 86, 143);
+    font-size: 30px;  
+}
 /* Hero / responsive background */
 .hero{
     position: relative;
@@ -186,3 +196,65 @@ body{
 @media (prefers-reduced-motion: reduce){
     .hero{ background-attachment: scroll; }
 }
+.hero__card{
+  position: relative;
+  bottom: 5rem;
+    background-color: rgb(255, 255, 255);
+    padding: 20px;
+    border-radius: 3px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 200px;
+    /* height: 250px; */
+    height: 220px;
+   
+}
+.secondary__btn {
+  border: none;
+  background: #dcd6d6;
+  padding: 5px;
+  border-radius: 5px;
+  margin-top: 5px;
+}
+.hero_card{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  
+  }
+  @media screen and (min-width: 768px) {
+    .hero_card{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  
+    }
+    
+  }
+  .our_service{
+    width: 250px;
+    height: 150px;
+    background-color: #ffffff;
+    margin: 0 50px;
+    border-radius: 10px;
+  padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  .our__services .our_title{
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  .our__services{
+    padding: 50px 0;
+    background-color: rgb(242, 249, 246);
+  }
+  .our__content{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+  }
+ 
