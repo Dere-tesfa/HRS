@@ -631,9 +631,17 @@ body {
   width: 100%;
   position: fixed;
 }
-
-.admin__container {
+@media screen and (max-width: 768px) {
+  .admin_main{
+  margin-left: 170px;
+  padding: 20px;
+  margin-top: 3rem;
+}
+  
+}
+.chart__container {
   display: flex;
+<<<<<<< HEAD
 }
 
 .admin_main img {
@@ -737,3 +745,20 @@ tr:nth-child(even){
   text-decoration: none;
   color: white;
 }
+=======
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5rem;
+  flex-wrap: wrap;
+}
+.chart_box {
+  width: 400px;
+  height: 350px;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+>>>>>>> 5fea25732dcfe758fbb9cc844aa2d42f7ad2b136
