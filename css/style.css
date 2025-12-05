@@ -79,7 +79,20 @@ body {
   cursor: pointer;
   margin-left: 20px;
 }
-
+.header-logout-button {
+  background-color: rgb(241, 241, 241);
+  color: black;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 600px;
+  padding: 10px;
+  font-size: 16px;
+}
+.logout-action {
+  margin-left: auto;
+  margin-right: 30px;
+}
 .actions {
   display: flex;
   align-items: center;
@@ -87,6 +100,7 @@ body {
 }
 
 .header-login-button:hover,
+.header-logout-button:hover,
 .header-signup-button:hover {
   background-color: var(--main-color);
   color: rgb(255, 255, 255);
@@ -94,6 +108,7 @@ body {
 }
 
 .header-login-button:focus,
+.header-logout-button:focus,
 .header-signup-button:focus {
   outline: 2px solid rgb(248, 247, 247);
 }
@@ -168,7 +183,7 @@ body {
   display: flex;
   flex-direction: column;
   text-decoration: none;
-  color: rgba(177, 150, 150, 0.848);
+  color: rgba(254, 248, 248, 0.848);
 }
 
 .footer-titles {
@@ -178,7 +193,7 @@ body {
 }
 
 .footer-lists a:hover {
-  color: #ffffff;
+  color: #342f2f;
 }
 
 /* Hero / responsive background */
@@ -574,51 +589,47 @@ body {
 
 .admin__siderBar {
   position: fixed;
-  top: 1px;
-  left: 0;
-  overflow-y: auto;
-  width: 150px;
+  top: 10px;
+  height: 65vh;
+  width: 20%;
   background: #9c9a9a;
-  margin-top: 3.5rem;
- 
-  border-radius: 6px;
-  
-
-}
-
-.admin__siderBar a {
-  text-decoration: none;
+  margin-top: 70px;
   padding: 10px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
+  border-radius: 5px;
+  margin-left: 5px;
 
 }
 
-.admin__siderBar li {
-  /* text-align: center; */
+.admin__siderBar li a {
+  text-decoration: none;
+  color: black;
+}
+
+.admin__siderBar ul li {
+  text-align: left;
+  font-size: 16px;
+  margin-bottom: 10px;
   color: black;
   font-weight: bold;
   list-style: none;
- padding: 5px;
+  padding: 10px;
 }
 
-.admin__siderBar li:hover {
+
+.admin__siderBar li:hover,.Dashboard-lists:hover {
   background-color: #d5cdcd;
-  border-radius: 7px;
+  border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
-  width: 100%;
-  padding: 5px;
-
-
-
 }
 
 .admin__footer {
   background-color: var(--main-color);
   text-align: center;
   padding: 10px;
+  margin-top: 30px;
+  bottom: 0;
+  width: 100%;
+  position: fixed;
   margin-top: 7rem;
   position: fixed;
   bottom: 0;
@@ -637,13 +648,108 @@ body {
 
 .chart__container {
   display: flex;
-  gap: 20px;
+}
+
+.admin_main img {
+  margin-left: 10rem;
+  width: 100%;
+  margin-top: 1rem;
+  left: 0;
+}
+/* employee table style */
+.employee-list-container{
+  margin: 100px ;
+  margin-left: 25%;
+  padding: 20px;
+  width: 75%;
+  margin-bottom: 200px;
+}
+.employee-list-title {
+  font-size: 34px;
+  font-weight: bolder;
+margin-left: 0px;
+  margin-right: 520px;
+}
+.table-actions{
+  border: 2px solid rgb(118, 114, 114);
+  padding: 10px;
+  display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 5rem;
-  flex-wrap: wrap;
-  margin-left: 10rem;
-  margin-bottom: 4em;
+  gap: 10px;
+  box-shadow: 0 4px 8px rgba(11, 175, 216, 0.1);
+  border-radius: 6px;
+}
+.table-actions:hover{
+  box-shadow: 0 8px 16px rgba(63, 99, 108, 0.2);
+  transform: translateY(-2px);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+.employee-table{
+border-radius: 6px;
+  width: 100%;
+  margin-top: 20px;
+}
+table, th, td{
+  border-collapse: collapse;
+  padding: 10px;
+  border: 2px solid black;
+}
+th{
+  background-color: var(--main-color);
+  color: white;
+  font-weight: bolder;
+}
+tr:nth-child(even){
+  background-color: #f5ebeb;
+}
+.detail-btn{
+  padding: 8px;
+  background-color: rgb(5, 99, 150);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+.detail-btn a{
+  text-decoration: none;
+  color: white;
+}
+.add-btn{ 
+  margin-left: -180px;
+  margin-bottom: 20px;
+  padding: 10px;
+  background-color: rgb(9, 173, 50);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+/* .table-btn-group{
+  margin-left: -320px;
+
+} */
+.add-btn a{
+  text-decoration: none;
+  color: white;
+}
+.delete-btn{
+  margin-left: 20px;
+  margin-bottom: 20px;
+  padding: 10px;
+  background-color: rgb(240, 67, 67);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+.delete-btn a{
+  text-decoration: none;
+  color: white;
 }
 
 .chart_box {
