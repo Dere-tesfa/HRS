@@ -630,15 +630,22 @@ body {
   bottom: 0;
   width: 100%;
   position: fixed;
+  margin-top: 7rem;
+  position: fixed;
+  bottom: 0;
+  width: 100%;    
+
 }
+
 @media screen and (max-width: 768px) {
-  .admin_main{
-  margin-left: 170px;
-  padding: 20px;
-  margin-top: 3rem;
+  .admin_main {
+    margin-left: 170px;
+    padding: 20px;
+    margin-top: 3rem;
+  }
+
 }
-  
-}
+
 .chart__container {
   display: flex;
 }
@@ -753,4 +760,3 @@ tr:nth-child(even){
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
-
