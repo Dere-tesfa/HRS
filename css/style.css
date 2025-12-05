@@ -574,32 +574,44 @@ body {
 
 .admin__siderBar {
   position: fixed;
-  top: 0;
-  bottom: 0;
-
-  height: 500px;
+  top: 1px;
+  left: 0;
+  overflow-y: auto;
   width: 150px;
   background: #9c9a9a;
   margin-top: 3.5rem;
+ 
   border-radius: 6px;
+  
 
 }
 
 .admin__siderBar a {
   text-decoration: none;
-  padding: 2rem;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 
 }
 
 .admin__siderBar li {
-  text-align: center;
+  /* text-align: center; */
   color: black;
   font-weight: bold;
+  list-style: none;
+ padding: 5px;
 }
 
 .admin__siderBar li:hover {
   background-color: #d5cdcd;
-  border-radius: 10px;
+  border-radius: 7px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 100%;
+  padding: 5px;
+
+
 
 }
 
@@ -607,21 +619,22 @@ body {
   background-color: var(--main-color);
   text-align: center;
   padding: 10px;
-  margin-top: 2rem;
+  margin-top: 7rem;
   position: fixed;
-  bottom: 0rem;
-  width: 100%;
-
+  bottom: 0;
+  width: 100%;    
 
 }
+
 @media screen and (max-width: 768px) {
-  .admin_main{
-  margin-left: 170px;
-  padding: 20px;
-  margin-top: 3rem;
+  .admin_main {
+    margin-left: 170px;
+    padding: 20px;
+    margin-top: 3rem;
+  }
+
 }
-  
-}
+
 .chart__container {
   display: flex;
   gap: 20px;
@@ -629,7 +642,10 @@ body {
   align-items: center;
   margin-top: 5rem;
   flex-wrap: wrap;
+  margin-left: 10rem;
+  margin-bottom: 4em;
 }
+
 .chart_box {
   width: 400px;
   height: 350px;
@@ -638,4 +654,3 @@ body {
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
-
