@@ -79,7 +79,20 @@ body {
   cursor: pointer;
   margin-left: 20px;
 }
-
+.header-logout-button {
+  background-color: rgb(241, 241, 241);
+  color: black;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 600px;
+  padding: 10px;
+  font-size: 16px;
+}
+.logout-action {
+  margin-left: auto;
+  margin-right: 30px;
+}
 .actions {
   display: flex;
   align-items: center;
@@ -87,6 +100,7 @@ body {
 }
 
 .header-login-button:hover,
+.header-logout-button:hover,
 .header-signup-button:hover {
   background-color: var(--main-color);
   color: rgb(255, 255, 255);
@@ -94,6 +108,7 @@ body {
 }
 
 .header-login-button:focus,
+.header-logout-button:focus,
 .header-signup-button:focus {
   outline: 2px solid rgb(248, 247, 247);
 }
