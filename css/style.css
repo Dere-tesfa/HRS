@@ -614,15 +614,28 @@ body {
 
 
 }
-
-.admin__container {
+@media screen and (max-width: 768px) {
+  .admin_main{
+  margin-left: 170px;
+  padding: 20px;
+  margin-top: 3rem;
+}
+  
+}
+.chart__container {
   display: flex;
-
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5rem;
+  flex-wrap: wrap;
+}
+.chart_box {
+  width: 400px;
+  height: 350px;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.admin_main img {
-  margin-left: 10rem;
-  width: 100%;
-  margin-top: 1rem;
-  left: 0;
-}
