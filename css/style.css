@@ -183,7 +183,7 @@ body {
   display: flex;
   flex-direction: column;
   text-decoration: none;
-  color: rgba(177, 150, 150, 0.848);
+  color: rgba(254, 248, 248, 0.848);
 }
 
 .footer-titles {
@@ -193,7 +193,7 @@ body {
 }
 
 .footer-lists a:hover {
-  color: #ffffff;
+  color: #342f2f;
 }
 
 /* Hero / responsive background */
@@ -641,4 +641,99 @@ body {
   width: 100%;
   margin-top: 1rem;
   left: 0;
+}
+/* employee table style */
+.employee-list-container{
+  margin: 100px ;
+  margin-left: 25%;
+  padding: 20px;
+  width: 75%;
+  margin-bottom: 200px;
+}
+.employee-list-title {
+  font-size: 34px;
+  font-weight: bolder;
+margin-left: 0px;
+  margin-right: 520px;
+}
+.table-actions{
+  border: 2px solid rgb(118, 114, 114);
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 4px 8px rgba(11, 175, 216, 0.1);
+  border-radius: 6px;
+}
+.table-actions:hover{
+  box-shadow: 0 8px 16px rgba(63, 99, 108, 0.2);
+  transform: translateY(-2px);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+.employee-table{
+border-radius: 6px;
+  width: 100%;
+  margin-top: 20px;
+}
+table, th, td{
+  border-collapse: collapse;
+  padding: 10px;
+  border: 2px solid black;
+}
+th{
+  background-color: var(--main-color);
+  color: white;
+  font-weight: bolder;
+}
+tr:nth-child(even){
+  background-color: #f5ebeb;
+}
+.detail-btn{
+  padding: 8px;
+  background-color: rgb(5, 99, 150);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+.detail-btn a{
+  text-decoration: none;
+  color: white;
+}
+.add-btn{ 
+  margin-left: -180px;
+  margin-bottom: 20px;
+  padding: 10px;
+  background-color: rgb(9, 173, 50);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+/* .table-btn-group{
+  margin-left: -320px;
+
+} */
+.add-btn a{
+  text-decoration: none;
+  color: white;
+}
+.delete-btn{
+  margin-left: 20px;
+  margin-bottom: 20px;
+  padding: 10px;
+  background-color: rgb(240, 67, 67);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+.delete-btn a{
+  text-decoration: none;
+  color: white;
 }
