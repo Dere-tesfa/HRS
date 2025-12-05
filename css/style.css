@@ -589,14 +589,15 @@ body {
 
 .admin__siderBar {
   position: fixed;
-  top: 10px;
-  height: 65vh;
-  width: 20%;
+  top: 1px;
+  left: 0;
+  overflow-y: auto;
+  width: 150px;
   background: #9c9a9a;
-  margin-top: 70px;
-  padding: 10px;
-  border-radius: 5px;
-  margin-left: 5px;
+  margin-top: 3.5rem;
+ 
+  border-radius: 6px;
+  
 
 }
 
