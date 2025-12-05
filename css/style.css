@@ -589,50 +589,51 @@ body {
 
 .admin__siderBar {
   position: fixed;
-  top: 0;
-  bottom: 0;
-
-  height: 500px;
-  width: 150px;
+  top: 10px;
+  height: 65vh;
+  width: 20%;
   background: #9c9a9a;
-  margin-top: 3.5rem;
-  border-radius: 6px;
+  margin-top: 70px;
+  padding: 10px;
+  border-radius: 5px;
+  margin-left: 5px;
 
 }
 
-.admin__siderBar a {
+.admin__siderBar li a {
   text-decoration: none;
-  padding: 2rem;
-
+  color: black;
 }
 
-.admin__siderBar li {
-  text-align: center;
+.admin__siderBar ul li {
+  text-align: left;
+  font-size: 16px;
+  margin-bottom: 10px;
   color: black;
   font-weight: bold;
+  list-style: none;
+  padding: 10px;
 }
 
-.admin__siderBar li:hover {
-  background-color: #d5cdcd;
-  border-radius: 10px;
 
+.admin__siderBar li:hover,.Dashboard-lists:hover {
+  background-color: #d5cdcd;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
 .admin__footer {
   background-color: var(--main-color);
   text-align: center;
   padding: 10px;
-  margin-top: 2rem;
-  position: fixed;
-  bottom: 0rem;
+  margin-top: 30px;
+  bottom: 0;
   width: 100%;
-
-
+  position: fixed;
 }
 
 .admin__container {
   display: flex;
-
 }
 
 .admin_main img {
