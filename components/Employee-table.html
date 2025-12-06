@@ -12,116 +12,124 @@
 </head>
 
 <body>
-  <header class="header">
-    <div class="header-logo"><a href="/Html/index.html"><img src="../images/logo.png" alt="logo"></a></div>
-    <h2 class="admin-header-title">HR-SYSTEM</h2>
-    <div class="logout-action">
-      <a href="../components/login.html"> <button class="header-logout-button">logout</button></a>
-  </header>
-  <div class="admin__siderBar">
-    <ul>
-      <li class=""> <i class="fa-solid fa-city dashboard_icons
-                        "></i><a href="./Admin.html">Dashbord</a></li>
-      <li class="active"> <i class="fa-solid fa-people-roof dashboard_icons
-                        "></i><a href="#">Employees</a></li>
-      <li> <i class="fa-solid fa-clipboard-user dashboard_icons
-                        "></i><a href="#">Attendance</a></li>
-      <li> <i class="fa-solid fa-clipboard-user dashboard_icons
-                        "></i><a href="#">Recruitment</a></li>
-      <li> <i class="fa-brands fa-paypal dashboard_icons
-                        "></i><a href="#">Payroll</a></li>
-      <li> <i class="fa-solid fa-ban dashboard_icons
-                        "></i><a href="#">Leave</a></li>
-      <li> <i class="fa-solid fa-gear dashboard_icons
-                        "></i><a href="#">Setting</a></li>
-    </ul>
-
-
-
-
-  </div>
-
-  <div class="employee-list-container">
-    <div class="table-actions">
-      <h2 class="employee-list-title">Employee List</h2>
-      <div class="table-btn-group">
-        <button class="add-btn"><a href="../components/signup.html">ADD</a></button>
-        <button class="delete-btn"><a href="#">DELETE</a></button>
+  <div class="admin__pages">
+    <header>
+      <div class="header_content">
+        <div class="header-logo"><a href="../Html/index.html"><img src="../images/logo.png" alt="logo"></a></div>
+        <h2>HR_System</h2>
       </div>
-    </div>
-    <table class="employee-table">
-      <tr>
-        <th>No</th>
-        <th>Employee Name</th>
-        <th>Employee ID</th>
-        <th>Department</th>
-        <th>Gender</th>
-        <th>Joining Date</th>
-        <th>action</th>
-      </tr>
-      <tr>
-        <td>1</td>
-        <td>tadios misganaw</td>
-        <td>hr1234</td>
-        <td>developer</td>
-        <td>male</td>
-        <td>20/03/2003 EC</td>
-        <td><button class="detail-btn"><a href="#">view detail</a></button></td>
-      </tr>
-      <tr>
-        <td>2</td>
-        <td>dereje tesfaye</td>
-        <td>hr1234</td>
-        <td>developer</td>
-        <td>male</td>
-        <td>20/03/2003 EC</td>
-        <td><button class="detail-btn"><a href="#">view detail</a></button></td>
+    
+    </header>
 
-      </tr>
-      <tr>
-        <td>3</td>
-        <td>biniyam misganaw</td>
-        <td>hr1234</td>
-        <td>developer</td>
-        <td>male</td>
-        <td>20/03/2003 EC</td>
-        <td><button class="detail-btn"><a href="#">view detail</a></button></td>
+    <aside>
+      <ul class="admin_main_page">
+        <li class=""> <i class="fa-solid fa-city dashboard_icons
+                        "></i><a class="dashboard_links
+                        " href="../components/Admin.html">Dashbord</a></li>
+        <li class="active"> <i class="fa-solid fa-people-roof dashboard_icons
+                        "></i><a class="dashboard_links
+                        " href="./Employee-table.html">Employees</a></li>
+        <li> <i class="fa-solid fa-clipboard-user dashboard_icons
+                        "></i><a class="dashboard_links
+                        " href="#">Attendance</a></li>
+        <li> <i class="fa-solid fa-clipboard-user dashboard_icons
+                        "></i><a class="dashboard_links
+                        " href="#">Recruitment</a></li>
+        <li> <i class="fa-brands fa-paypal dashboard_icons
+                        "></i><a class="dashboard_links
+                        " href="#">Payroll</a></li>
+        <li> <i class="fa-solid fa-ban dashboard_icons
+                        "></i><a class="dashboard_links
+                        " href="#">Leave</a></li>
+        <li> <i class="fa-solid fa-gear dashboard_icons
+                        "></i><a class="dashboard_links
+                        " href="#">Setting</a></li>
+      </ul>
+    </aside>
+    <main>
 
-      </tr>
-      <tr>
-        <td>4</td>
-        <td>john </td>
-        <td>hr1234</td>
-        <td>developer</td>
-        <td>male</td>
-        <td>20/03/2003 EC</td>
-        <td><button class="detail-btn"><a href="#">view detail</a></button></td>
+      <div class="employee-list-container">
+        <div class="table-actions">
+          <h2 class="employee-list-title">Employee List</h2>
+          <div class="table-btn-group">
+            <button class="add-btn"><a href="../components/signup.html">ADD</a></button>
+            <button class="delete-btn"><a href="#">DELETE</a></button>
+          </div>
+        </div>
+        <table class="employee-table">
+          <tr>
+            <th>No</th>
+            <th>Employee Name</th>
+            <th>Employee ID</th>
+            <th>Department</th>
+            <th>Gender</th>
+            <th>Joining Date</th>
+            <th>action</th>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td>tadios misganaw</td>
+            <td>hr1234</td>
+            <td>developer</td>
+            <td>male</td>
+            <td>20/03/2003 EC</td>
+            <td><button class="detail-btn"><a href="#">view detail</a></button></td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>dereje tesfaye</td>
+            <td>hr1234</td>
+            <td>developer</td>
+            <td>male</td>
+            <td>20/03/2003 EC</td>
+            <td><button class="detail-btn"><a href="#">view detail</a></button></td>
 
-      </tr>
-      <tr>
-        <td>5</td>
-        <td>belete misganaw</td>
-        <td>hr1234</td>
-        <td>developer</td>
-        <td>male</td>
-        <td>20/03/2003 EC</td>
-        <td><button class="detail-btn"><a href="#">view detail</a></button></td>
-      </tr>
-      <tr>
-        <td>6</td>
-        <td>hewan</td>
-        <td>hr1235</td>
-        <td>designer</td>
-        <td>female</td>
-        <td>21/03/2003 EC</td>
-        <td><button class="detail-btn"><a href="#">view detail</a></button></td>
-      </tr>
-    </table>
-  </div>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>biniyam misganaw</td>
+            <td>hr1234</td>
+            <td>developer</td>
+            <td>male</td>
+            <td>20/03/2003 EC</td>
+            <td><button class="detail-btn"><a href="#">view detail</a></button></td>
 
-  <div class="admin__footer">
-    <p>&copy; 2025 All Rights Are Reserved.</p>
-  </div>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>john </td>
+            <td>hr1234</td>
+            <td>developer</td>
+            <td>male</td>
+            <td>20/03/2003 EC</td>
+            <td><button class="detail-btn"><a href="#">view detail</a></button></td>
+
+          </tr>
+          <tr>
+            <td>5</td>
+            <td>belete misganaw</td>
+            <td>hr1234</td>
+            <td>developer</td>
+            <td>male</td>
+            <td>20/03/2003 EC</td>
+            <td><button class="detail-btn"><a href="#">view detail</a></button></td>
+          </tr>
+          <tr>
+            <td>6</td>
+            <td>hewan</td>
+            <td>hr1235</td>
+            <td>designer</td>
+            <td>female</td>
+            <td>21/03/2003 EC</td>
+            <td><button class="detail-btn"><a href="#">view detail</a></button></td>
+          </tr>
+        </table>
+      </div>
+
+    </main>
+    <footer>
+      &copy; 2025 All Rights Are Reserved.</p>
+    </footer>
   </div>
 </body>
 
