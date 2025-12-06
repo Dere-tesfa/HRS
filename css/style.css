@@ -92,6 +92,15 @@ body {
   font-size: 16px;
 }
 
+.menu-button{
+  background-color: transparent;
+  border: none;
+  color: black;
+  font-size: 24px;
+  cursor: pointer;
+  margin-left: 20px;
+  display: none;
+}
 .logout-action {
   margin-left: auto;
   margin-right: 30px;
@@ -119,9 +128,13 @@ body {
 
 .header-title {
   margin-left: 20px;
-  font-size: 28px;
+  font-size: clip(24px, 5vw, 36px);
+  color: black;
   font-weight: bolder;
 }
+
+
+/* footer */
 
 .footer {
   margin: 0;
@@ -245,40 +258,7 @@ body {
   margin-top: 1rem;
 }
 
-/* Responsive adjustments */
-@media screen and (max-width: 1024px) {
-  .hero {
-    min-height: 60vh;
-  }
 
-  .hero .hero_content {
-    padding: 3rem 1.25rem;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .hero {
-    min-height: 50vh;
-    background-attachment: scroll;
-    /* avoid parallax on mobile */
-  }
-
-  .hero .hero_content {
-    padding-top: 2rem;
-    padding-left: 1rem;
-  }
-
-  .primary_btn {
-    font-size: 16px;
-    padding: 0.5rem 0.8rem;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .hero {
-    background-attachment: scroll;
-  }
-}
 
 .hero__card {
   position: relative;
@@ -286,14 +266,21 @@ body {
   background-color: rgb(255, 255, 255);
   padding: 20px;
   border-radius: 3px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  max-width: 200px;
-  height: 250px;
-
-
-
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  width: 250px;
+  height: auto;
 }
 
+.hero-card-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  position: relative;
+  bottom: 5rem;
+
+}
 .hero_titles {
   font-size: 48px;
   font-weight: bolder;
@@ -310,7 +297,10 @@ body {
   font-weight: 600px;
   margin-left: 5rem;
 }
-
+.primary_btn:hover{
+  background-color: hsl(180, 54%, 40%);
+  color: #ffffff;
+}
 .secondary__btn {
   border: none;
   background: #eee6e6;
@@ -323,24 +313,14 @@ body {
 }
 
 .hero_card {
+  text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 15px;
-
 }
 
-@media screen and (min-width: 768px) {
-  .hero_card {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-
-  }
-
-}
 
 
 .our_service {
@@ -803,4 +783,111 @@ tr:nth-child(even) {
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.side-nav{
+  position: fixed;
+  top: 10vh;
+  left: -400px;
+  width: 25%;
+  height: 90vh;
+  background-color: #c8c2c2;
+  z-index: 555;
+  padding: 20px;
+  transition: left 0.3s ease;
+}
+.side-nav-lists {
+  list-style: none;
+  padding: 0;
+}
+
+.side-nav-items {
+  padding: 10px;
+  color: #333;
+}
+
+.side-nav-items:hover {
+  background-color: #e0e0e0;
+  cursor: pointer;
+  border-radius: 5px;
+  box-shadow:  4px 6px 4px 6px rgba(27, 162, 224, 0.1);
+}
+
+.side-nav-lists a {
+  text-decoration: none;
+  color: inherit;
+}
+
+
+/* responsiveness styles */
+@media screen and (max-width: 768px) {
+  .header-nav {
+    display: none;
+  }
+
+  .menu-button {
+    display: block;
+    margin-left: 30px;
+    margin-right: -30px;
+  }
+  .header-actions {
+    margin-left: 10px;
+  }
+  .header-subtitle {
+    font-size: clip(12px, 4vw, 20px);
+    color: #666;
+  }
+  .header-title {
+    margin-left: -5px;
+    margin-right: 40px;
+    font-size: clip(15px, 5vw, 28px);
+  }
+}
+/* responsive hero */
+@media screen and (max-width: 768px) {
+  .hero .hero_content {
+    padding: 2rem 1rem;
+    text-align: center;
+  }
+
+  .hero_titles {
+    font-size: clip(24px, 6vw, 36px);
+  }
+
+  .primary_btn {
+    font-size: clip(14px, 4vw, 20px);
+    padding: 0.5rem 0.8rem;
+  }
+
+  .hero__card {
+    width: 350px;
+    bottom: 3rem;
+    padding: 15px;
+    box-shadow:  4px 6px 4px 6px rgba(27, 162, 224, 0.1);
+  }
+
+  .hero-card-container {
+    flex-direction: column;
+    gap: 50px;
+    bottom: 3rem;
+  }
+}
+/* responsive footer */
+@media screen and (max-width: 768px) {
+
+  .footer {
+    flex-direction: column;
+    height: auto;
+    padding: 20px 10px;
+    gap: 20px;
+    text-align: center;
+  }
+  .footer-contents p {
+    margin: 0;
+    padding: 0;
+  }
+  .footer-contents {
+    font-size: 10px;
+    align-items: center;
+    gap: 20px;
+  }
 }

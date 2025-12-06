@@ -19,16 +19,27 @@
         <div class="header-logo"><a href="index.html"><img src="../images/logo.png" alt="logo"></a></div>
         <h2 class="header-title">HR-SYSTEM</h2>
         <nav class="header-nav">
-            <li class="header-nav-items"><a href="">HOME</a></li>
+            <li class="header-nav-items"><a href="index.html">HOME</a></li>
             <li class="header-nav-items"><a href="#about">ABOUT</a></li>
             <li class="header-nav-items"><a href="#service">SERVICE </a></li>
-            <li class="header-nav-items"><a href="">CONTACT </a></li>
+            <li class="header-nav-items"><a href="#">CONTACT </a></li>
         </nav>
         <div class="actions">
            <a href="../components/login.html"> <button class="header-login-button">login</button></a>
             <a href="../components/signup.html"> <button class="header-signup-button">signup</button></a>
+ 
+            <button class="menu-button" onclick="toggleMenu()"><i class="fa-solid fa-bars"></i></button>    
         </div>
     </header>
+<aside class="side-nav">
+    <ul class="side-nav-lists">
+        <li class="side-nav-items"><a href="index.html">HOME</a></li>
+        <li class="side-nav-items"><a href="#about">ABOUT</a></li>
+        <li class="side-nav-items"><a href="#service">SERVICE </a></li>
+        <li class="side-nav-items"><a href="#">CONTACT </a></li>
+    </ul>
+</aside>
+
     <section id="about">
         <div class="hero">
             <div class="hero_content">
@@ -45,7 +56,7 @@
 
         </div>
     </section>
-    <div class="hero_card show">
+    <div class="hero-card-container show">
         <div class="hero__card">
             <i class="fa-solid fa-building-columns card_icon"></i>
             <h3>Join Our Team</h3>
@@ -156,6 +167,12 @@
 
     
     </footer>
+    <script>
+        function toggleMenu() {
+            const sidenav = document.querySelector('.side-nav');
+      sidenav.style.left = sidenav.style.left === '-400px' ? '0' : '-400px';
+        }
+    </script>
 </body>
 
 </html>
