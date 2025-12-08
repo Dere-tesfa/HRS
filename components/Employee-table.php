@@ -14,38 +14,14 @@
 <body>
   <div class="admin__pages">
     <header>
-      <div class="header_content">
-        <div class="header-logo"><a href="../Html/index.html"><img src="../images/logo.png" alt="logo"></a></div>
-        <h2>HR_System</h2>
-      </div>
+     <?php require "../include_Components/header.php"?>
     
     </header>
 
     <aside>
-      <ul class="admin_main_page">
-        <li class=""> <i class="fa-solid fa-city dashboard_icons
-                        "></i><a class="dashboard_links
-                        " href="../components/Admin.html">Dashbord</a></li>
-        <li class="active"> <i class="fa-solid fa-people-roof dashboard_icons
-                        "></i><a class="dashboard_links
-                        " href="./Employee-table.html">Employees</a></li>
-        <li> <i class="fa-solid fa-clipboard-user dashboard_icons
-                        "></i><a class="dashboard_links
-                        " href="#">Attendance</a></li>
-        <li> <i class="fa-solid fa-clipboard-user dashboard_icons
-                        "></i><a class="dashboard_links
-                        " href="#">Recruitment</a></li>
-        <li> <i class="fa-brands fa-paypal dashboard_icons
-                        "></i><a class="dashboard_links
-                        " href="#">Payroll</a></li>
-        <li> <i class="fa-solid fa-ban dashboard_icons
-                        "></i><a class="dashboard_links
-                        " href="#">Leave</a></li>
-        <li> <i class="fa-solid fa-gear dashboard_icons
-                        "></i><a class="dashboard_links
-                        " href="#">Setting</a></li>
-      </ul>
+     <?php include "../include_Components/asideBar.php"?>
     </aside>
+    
     <main>
 
       <div class="employee-list-container">
@@ -128,7 +104,7 @@
 
     </main>
     <footer>
-      &copy; 2025 All Rights Are Reserved.</p>
+     <?php include "../include_Components/footer.php"?>
     </footer>
   </div>
 </body>

@@ -21,11 +21,7 @@
     <div class="admin__pages">
 
         <header>
-            <div class="header_content">
-                <div class="header-logo"><a href="../Html/index.html"><img src="../images/logo.png" alt="logo"></a>
-                </div>
-                <h2>HR-System</h2>
-            </div>
+          <?php include "../include_Components/header.php"?>
         </header>
 
         <aside>
@@ -35,7 +31,7 @@
                         " href="#">Dashbord</a></li>
                 <li> <i class="fa-solid fa-people-roof dashboard_icons
                         "></i><a class="dashboard_links
-                        " href="./Employee-table.html">Employees</a></li>
+                        " href="./Employee-table.php">Employees</a></li>
                 <li> <i class="fa-solid fa-clipboard-user dashboard_icons
                         "></i><a class="dashboard_links
                         " href="#">Attendance</a></li>
@@ -64,7 +60,7 @@
 
         </main>
         <footer>
-            &copy; 2025 All Rights Are Reserved.</p>
+           <?php include "../include_Components/footer.php"?>
         </footer>
     </div>
     <script>

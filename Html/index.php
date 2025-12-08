@@ -16,27 +16,27 @@
     <!-- header -->
 
     <header class="header">
-        <div class="header-logo"><a href="index.html"><img src="../images/logo.png" alt="logo"></a></div>
+        <div class="header-logo"><a href="index.php"><img src="../images/logo.png" alt="logo"></a></div>
         <h2 class="header-title">HR-SYSTEM</h2>
         <nav class="header-nav">
-            <li class="header-nav-items"><a href="index.html">HOME</a></li>
+            <li class="header-nav-items"><a href="index.php">HOME</a></li>
             <li class="header-nav-items"><a href="#about">ABOUT</a></li>
             <li class="header-nav-items"><a href="#service">SERVICE </a></li>
-            <li class="header-nav-items"><a href="#">CONTACT </a></li>
+            <li class="header-nav-items"><a href="#contact">CONTACT </a></li>
         </nav>
         <div class="actions">
-           <a href="../components/login.html"> <button class="header-login-button">login</button></a>
-            <a href="../components/signup.html"> <button class="header-signup-button">signup</button></a>
+           <a href="../components/login.php"> <button class="header-login-button">login</button></a>
+            <a href="../components/signup.php"> <button class="header-signup-button">signup</button></a>
  
             <button class="menu-button" onclick="toggleMenu()"><i class="fa-solid fa-bars"></i></button>    
         </div>
     </header>
 <aside class="side-nav">
     <ul class="side-nav-lists">
-        <li class="side-nav-items"><a href="index.html">HOME</a></li>
+        <li class="side-nav-items"><a href="index.php">HOME</a></li>
         <li class="side-nav-items"><a href="#about">ABOUT</a></li>
         <li class="side-nav-items"><a href="#service">SERVICE </a></li>
-        <li class="side-nav-items"><a href="#">CONTACT </a></li>
+        <li class="side-nav-items"><a href="#contact">CONTACT </a></li>
     </ul>
 </aside>
 
@@ -128,7 +128,7 @@
     <footer class="footer">
         <p class="footer-copyright">&copy; 2025 All Rights Are Reserved.</p>
 
-<div class="footer-contents">
+<div class="footer-contents" id="contact">
     <div class="footer-lists">
         <h4 class="footer-titles">LEARN MORE</h4>
         <a href="">How it works?</a>
