@@ -145,7 +145,7 @@ elseif(!preg_match("A-Z",$password)){
           <label for="confirmPassword">Confirm Password:</label>
           <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm your password"
             required><br>
-                    <span class="error"><?php echo $passwordError?></span>
+                    <span class="error"><?php echo $confirmError?></span>
 
         </div>
 

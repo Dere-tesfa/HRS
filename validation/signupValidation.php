@@ -13,7 +13,7 @@ $gender="";
 $genderError= "";
 $password="";
 $passwordError= "";
-$confirm_password= "";
+$confirmPassword= "";
 $confirmError="";
 // check methods
 if($_SERVER["REQUEST_METHOD"]=="POST"){
@@ -23,7 +23,6 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
     $fullNameError="* Name is requered!";
   }
   elseif(strlen($FullName)<3){
-    
     $fullNameError= "* Name must be at least 3 character!";
   }
   //email validation
@@ -50,14 +49,17 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
   if(empty($address)){
     $addError="* Address is requered!";
   }
+  //department validation
   $department=trim($_POST["department"]);
   if(empty($department)){
     $depError="* Department is requered!";
   };
+  //gender validation
   $gender=trim($_POST["gender"]);
   if(empty($gender)){
     $genderError="* Gender must be selected!";
   }
+  //password validation
   $password=trim($_POST["password"]);
 if(empty($password)){
   $passwordError= "* password is required!";
@@ -70,6 +72,11 @@ elseif(!preg_match("0-9",$password)){
 }
 elseif(!preg_match("A-Z",$password)){
   $passwordError="Your Password Must Contain At Least 1 Capital Letter!";
+}
+//confirm password validation
+if($password !== $confirmPassword){
+$confirmPassword= trim($_POST["confirmPassword"]);
+  $confirmError = "Passwords do not match!";
 }
 }
 
