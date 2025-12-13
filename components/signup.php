@@ -88,6 +88,8 @@ elseif(!preg_match("A-Z",$password)){
   <style>
     body {
       background: hsl(0, 0%, 89%);
+      margin-top: 10rem;
+      
     }
     .error{
   color: rgb(241, 30, 30);
@@ -99,7 +101,6 @@ elseif(!preg_match("A-Z",$password)){
   <div class="signup__container">
     <div class="signup-container">
       <i class="fa-solid fa-user signup_icon "></i>
-      
       <h2 class="signup-title">Sign Up</h2>
      <div class="line"></div>
       <form class="signup-form" action="" method="post" novalidate>
