@@ -32,7 +32,7 @@
                 </div>
             </form>
             <button class="login_button">Login</button>
-            
+             <p>Don't have account?<a href="signup.php">signup</a></p>
         </div>
     </div>
 </body>
