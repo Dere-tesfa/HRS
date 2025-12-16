@@ -21,18 +21,26 @@
           <i class="fa-solid fa-user login_icon"></i>
             <h1 class="login_title">Login</h1>
             <hr>
-            <form class="logi_form" action="">
+             <h4 style="color:red">
+                    <?php
+                    error_reporting(0);
+                    session_start();
+                    session_destroy();
+                    echo $_SESSION["loginMessage"];
+                    ?>
+                </h4>
+            <form class="logi_form" action="" method="post">
                 <div class="login__group">
                     <label for="name">Name:</label>
-                    <input type="text" id="name" placeholder="Enter your name">
+                    <input type="text" id="name" name="name" placeholder="Enter your name">
                 </div>
                 <div class="login__group">
                     <label for="password">Password:</label>
-                    <input type="password" id="password" placeholder="Enter your password">
+                    <input type="password" id="password" name="password" placeholder="Enter your password">
                 </div>
             </form>
             <button class="login_button">Login</button>
-            
+             <p>Don't have account?<a href="signup.php">signup</a></p>
         </div>
     </div>
 </body>

@@ -126,6 +126,7 @@
 
     <!-- footer -->
     <footer class="footer">
+        <a class="back_arrow" href="index.php">^</a>
         <p class="footer-copyright">&copy; 2025 All Rights Are Reserved.</p>
 
 <div class="footer-contents" id="contact">
