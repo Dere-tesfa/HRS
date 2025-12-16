@@ -105,7 +105,7 @@ elseif(!preg_match("A-Z",$password)){
           <div class="quote">
             <div class="quote_text">
               <h2>welcome!</h2>
-              <p>Already signup?<a href="login.php">login</a></p>
+              <p class="move_link">Already signup?<a href="login.php">login</a></p>
             </div>
         </div>
 

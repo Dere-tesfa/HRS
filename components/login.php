@@ -21,7 +21,7 @@
           <i class="fa-solid fa-user login_icon"></i>
             <h1 class="login_title">Login</h1>
             <hr>
-            <form class="logi_form" action="">
+            <form class="login_form" action="">
                 <div class="login__group">
                     <label for="name">Name:</label>
                     <input type="text" id="name" placeholder="Enter your name">
@@ -32,7 +32,7 @@
                 </div>
             </form>
             <button class="login_button">Login</button>
-             <p>Don't have account?<a href="signup.php">signup</a></p>
+             <p class="move_link">Don't have account?<a href="signup.php">signup</a></p>
         </div>
     </div>
 </body>
