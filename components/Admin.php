@@ -1,13 +1,9 @@
 <?php
 session_start();
-error_reporting(0);
-if (!isset($_SESSION["name"])) {
-    header("Location: login.php");
-    exit();
-} elseif (isset($_SESSION["usertype"]) && $_SESSION["usertype"] === 'employee') {
-    header("Location: login.php");
-    exit();
-}
+// if(!isset($_SESSION["name"]) || $_SESSION["role"] != "employee") {
+//     header("location:login.php");
+//     exit();
+// }
 ?>
 
 

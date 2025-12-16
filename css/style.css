@@ -739,33 +739,16 @@ footer {
 }
 
 /* employee table style */
-.employee-list-container {
-  margin: 50px;
-  margin-left: 15;
-  padding: 20px;
-  width: 70%;
-  margin-bottom: 50px;
+.employee-list-container{
+ 
+  margin: 5rem;
+  
+ 
 }
 
-.table-btn-group {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  gap: 10px;
-  margin-top: 15px;
-  /* margin-bottom: 20px; */
-}
 
-.table-actions {
-  border: 1px solid rgb(150, 144, 144);
-  padding: 10px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 10px;
-  box-shadow: 0 4px 8px rgba(11, 175, 216, 0.1);
-  border-radius: 6px;
-}
+
+
 
 .table-actions:hover {
   box-shadow: 0 8px 16px rgba(63, 99, 108, 0.2);
@@ -774,18 +757,16 @@ footer {
   cursor: pointer;
 }
 
-.employee-table {
-  border-radius: 6px;
-  width: 100%;
-  margin-top: 20px;
-}
+
 
 table,
 th,
 td {
   border-collapse: collapse;
   padding: 10px;
-  border: 1px solid rgb(159, 149, 149);
+  border: 1px solid rgb(236, 232, 232);
+  background-color: #bcb0b0;
+  box-shadow: 1px .1px 2px .1px rgb(240, 231, 231);
 }
 
 th {
@@ -814,12 +795,13 @@ tr:nth-child(even) {
 }
 
 .add-btn {
-  margin-left: -180px;
+  /* margin-left: -180px; */
   margin-bottom: 20px;
   padding: 10px;
   background-color: rgb(9, 173, 50);
   color: white;
   border: none;
+  float: right;
   border-radius: 5px;
   cursor: pointer;
   font-size: 16px;

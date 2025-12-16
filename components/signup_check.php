@@ -1,6 +1,6 @@
 <?php
 session_start();
-error_reporting(0);
+// error_reporting(0);
 $host="localhost";
 $user="root";
 $password="";
@@ -22,12 +22,10 @@ if(isset($_POST["signup"])){
     $sql="INSERT INTO hrsystem(fullname,email,phone,address,department,gender,role,password)
     VALUES('$data_name','$data_email','$data_phone','$data_address','$data_dep','$data_gender','$role','$data_password')";
     $result=mysqli_query($data,$sql);
-    
-     die('Apply Failed: '.mysqli_error($data));
     if($result){
         $_SESSION["message"]="The application is sent successfully!";
-        header("Location: login.php");
-        exit;
+        header("location:login.php");
+    
     } else {
         echo 'Apply Failed';
     }

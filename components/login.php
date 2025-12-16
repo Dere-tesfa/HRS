@@ -1,3 +1,11 @@
+<?php
+                    error_reporting(0);
+                    session_start();
+                    session_destroy();
+                    echo $_SESSION["loginMessage"];
+                    ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -29,7 +37,7 @@
                     echo $_SESSION["loginMessage"];
                     ?>
                 </h4>
-            <form class="logi_form" action="" method="post">
+            <form class="logi_form" action="login_check.php" method="post">
                 <div class="login__group">
                     <label for="name">Name:</label>
                     <input type="text" id="name" name="name" placeholder="Enter your name">

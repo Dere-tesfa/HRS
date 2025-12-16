@@ -1,3 +1,15 @@
+<?php
+$host="localhost";
+$user= "root";
+$password= "";
+$dbname= "hr_systems";
+$data=mysqli_connect($host,$user,$password,$dbname);
+$sql="SELECT*from hrsystem WHERE role='employee'";
+$result=mysqli_query($data, $sql);
+
+?>
+
+
 <html lang="en">
 
 <head>
@@ -25,80 +37,62 @@
     <main>
 
       <div class="employee-list-container">
-        <div class="table-actions">
-          <h2 class="employee-list-title">Employee List</h2>
-          <div class="table-btn-group">
-            <button class="add-btn"><a href="../components/signup.html">ADD</a></button>
-            <button class="delete-btn"><a href="#">DELETE</a></button>
-          </div>
-        </div>
-        <table class="employee-table">
+       
+          
+          
+            <button class="add-btn"><a href="../components/signup.php">ADD</a></button>
+            
+         
+      
+       <h2 style="text-align:center;">Employee List</h2>
+        <table>
           <tr>
-            <th>No</th>
             <th>Employee Name</th>
-            <th>Employee ID</th>
+            <th>Email</th>
+            <th>phone</th>
+            <th>Address</th>
             <th>Department</th>
-            <th>Gender</th>
-            <th>Joining Date</th>
-            <th>action</th>
+            <th>gender</th>
+            <th>password</th>
+            <th>Delete</th>
           </tr>
+           <?php
+        
+      while($info=$result->fetch_assoc()){
+       
+       
+                ?>
           <tr>
-            <td>1</td>
-            <td>tadios misganaw</td>
-            <td>hr1234</td>
-            <td>developer</td>
-            <td>male</td>
-            <td>20/03/2003 EC</td>
-            <td><button class="detail-btn"><a href="#">view detail</a></button></td>
-          </tr>
-          <tr>
-            <td>2</td>
-            <td>dereje tesfaye</td>
-            <td>hr1234</td>
-            <td>developer</td>
-            <td>male</td>
-            <td>20/03/2003 EC</td>
-            <td><button class="detail-btn"><a href="#">view detail</a></button></td>
-
-          </tr>
-          <tr>
-            <td>3</td>
-            <td>biniyam misganaw</td>
-            <td>hr1234</td>
-            <td>developer</td>
-            <td>male</td>
-            <td>20/03/2003 EC</td>
-            <td><button class="detail-btn"><a href="#">view detail</a></button></td>
-
-          </tr>
-          <tr>
-            <td>4</td>
-            <td>john </td>
-            <td>hr1234</td>
-            <td>developer</td>
-            <td>male</td>
-            <td>20/03/2003 EC</td>
-            <td><button class="detail-btn"><a href="#">view detail</a></button></td>
-
-          </tr>
-          <tr>
-            <td>5</td>
-            <td>belete misganaw</td>
-            <td>hr1234</td>
-            <td>developer</td>
-            <td>male</td>
-            <td>20/03/2003 EC</td>
-            <td><button class="detail-btn"><a href="#">view detail</a></button></td>
-          </tr>
-          <tr>
-            <td>6</td>
-            <td>hewan</td>
-            <td>hr1235</td>
-            <td>designer</td>
-            <td>female</td>
-            <td>21/03/2003 EC</td>
-            <td><button class="detail-btn"><a href="#">view detail</a></button></td>
-          </tr>
+            <td>
+              <?php echo "{$info['fullname']}"?>
+          </td>
+            <td>
+              <?php echo "{$info['email']}"?>
+          </td>
+            <td>
+              <?php echo "{$info['phone']}"?>
+          </td>
+            <td>
+              <?php echo "{$info['address']}"?>
+          </td>
+            <td>
+              <?php echo "{$info['department']}"?>
+          </td>
+            <td>
+              <?php echo "{$info['gender']}"?>
+          </td>
+            <td>
+              <?php echo "{$info['password']}"?>
+          </td>
+            <td>
+             
+          </td>
+            </tr>
+          
+          <?php
+          
+          }
+          ?>
         </table>
       </div>
 
