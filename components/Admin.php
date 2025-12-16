@@ -7,7 +7,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Dashbord</title>
+    <title>Admin Dashboard</title>
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../font/css/all.css">
     <link rel="stylesheet" href="../font/css/all.min.css">
@@ -28,7 +28,7 @@
             <ul class="admin_main_page">
                 <li class="active"> <i class="fa-solid fa-city dashboard_icons
                         "></i><a class="dashboard_links
-                        " href="#">Dashbord</a></li>
+                        " href="#">Dashboard</a></li>
                 <li> <i class="fa-solid fa-people-roof dashboard_icons
                         "></i><a class="dashboard_links
                         " href="./Employee-table.php">Employees</a></li>
