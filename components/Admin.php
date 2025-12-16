@@ -41,7 +41,7 @@ if (!isset($_SESSION["name"])) {
             <ul class="admin_main_page">
                 <li class="active"> <i class="fa-solid fa-city dashboard_icons
                         "></i><a class="dashboard_links
-                        " href="#">Dashbord</a></li>
+                        " href="#">Dashboard</a></li>
                 <li> <i class="fa-solid fa-people-roof dashboard_icons
                         "></i><a class="dashboard_links
                         " href="./Employee-table.php">Employees</a></li>

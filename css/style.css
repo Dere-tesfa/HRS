@@ -6,7 +6,7 @@
 }
 
 :root {
-  --main-color: hsl(180, 54%, 54%);
+  --main-color: hsl(180, 58%, 47%);
 }
 
 body {
@@ -49,10 +49,10 @@ body {
 }
 
 .header-nav-items a {
-  color: rgb(60, 57, 57);
+  color: black;
   text-decoration: none;
   font-size: 18px;
-  font-weight: lighter;
+  font-weight: bold;
 }
 
 .header-nav-items a:hover {
@@ -116,9 +116,9 @@ body {
 .header-login-button:hover,
 .header-logout-button:hover,
 .header-signup-button:hover {
-  background-color: var(--main-color);
+  background-color:rgb(180, 176, 172);
   color: rgb(255, 255, 255);
-  outline: 1px solid rgb(225, 219, 219);
+  outline: 1px solid rgb(98, 85, 85);
 }
 
 .header-login-button:focus,
@@ -130,7 +130,7 @@ body {
 .header-title {
   margin-left: 20px;
   font-size: clip(24px, 5vw, 36px);
-  color: black;
+  color: white;
   font-weight: bolder;
 }
 
@@ -607,6 +607,14 @@ margin-top: -20px;
   margin-bottom: 20px;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
+.move_link a{
+  text-decoration: none;
+  font-weight: bold;
+  margin-left:5px;
+}
+.move_link a:hover{
+  text-decoration: underline;
+}
 
 /* admin page style */
 .admin-header-title {
@@ -627,7 +635,7 @@ margin-top: -20px;
 
 header {
   grid-area: header;
-  background: #62ecde;
+  background-color: var(--main-color);
   color: white;
   position: fixed;
   width: 100%;
@@ -636,15 +644,13 @@ header {
 
 aside {
   grid-area: nav;
-  background-color: rgb(185, 184, 181);
-
-  position: fixed;
+ background-color:beige;
+   position: fixed;
   top: 60px;
   height: 100vh;
   left: 0;
-
+width: 250px;
 }
-
 .admin_main_page li {
   padding: 15px;
 
@@ -660,10 +666,9 @@ aside {
 
 }
 
-.admin_main_page li:hover {
-  background: rgb(161, 159, 159);
-  padding: 10px;
-  border-radius: 5px;
+.admin_main_page li:hover:not(.active){
+  background-color: #e0e0e0;
+  cursor: pointer;
 }
 
 
@@ -719,12 +724,12 @@ footer {
 
 .dashboard_icons {
 
-  color: dodgerblue;
+  color: rgb(94, 170, 245);
   margin-right: 10px;
   font-weight: bold;
 }
 .active {
-  background: #827d7d;
+  background: #2a5b8d;
   
   
 }
@@ -742,12 +747,6 @@ footer {
   margin-bottom: 50px;
 }
 
-/* .employee-list-title {
-  font-size: 24px;
-  font-weight: 600px;
-  margin-left: 0px;
-  margin-right: 520px;
-} */
 .table-btn-group {
   display: flex;
   justify-content: flex-start;
@@ -893,7 +892,78 @@ tr:nth-child(even) {
   color: inherit;
 }
 
+/* employee page styles*/
+.employee_main_page{
+  padding: 20px;
+  list-style-type: none;
+  text-align: left;
+  margin-top: -18px;
 
+}
+.dashboard_links{
+  text-decoration: none;
+color:black;
+}
+.employee_dashboard{
+  width: 250px;
+  background-color:beige;
+  position: fixed;
+  top: 60px;
+  height: 100vh;
+  left: 0;
+  border-radius:5px;
+}
+.employee_main_page li{
+  width: 250px;
+  padding: 10px 30px 10px 10px;
+  margin-left: -20px;
+
+}
+.employee_main_page li:hover:not(.active){
+  background-color: #e0e0e0;
+  cursor: pointer;
+
+}
+.employee_page_container{
+  display: flex;
+}
+.employee_profile_container{
+  margin-left: 300px;
+  margin-top: 65px;
+  padding: 20px;
+  background-color: #e5dada;
+}
+.profile_card{
+  margin-top: 20px;
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.profile_icon{
+  font-size: 60px;
+  width: 40px;
+  height: 40px;
+  padding: 10px;
+  color: white;
+  margin-bottom: 10px;
+  border-radius: 50%;
+  background-color: #b8bcbc;
+}
+.update_button{
+  margin-top: 20px;
+  padding: 10px;
+  background-color: var(--main-color);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+.update_button a{
+  text-decoration: none;
+  color: white;
+}
 /* responsiveness styles */
 @media screen and (max-width: 768px) {
   .header-nav {
