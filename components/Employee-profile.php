@@ -1,3 +1,16 @@
+<?php
+session_start();
+
+
+
+
+
+?>
+
+
+
+
+
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -42,8 +55,8 @@
           <h2>Employee Profile Page</h2>
           <p>Welcome to your profile page. Here you can view and update your personal information.</p>
     <div class="profile_card">
- <i class="fa-solid fa-user profile_icon"></i><h3>Tadios misganaw</h3>
-    <p><strong>Position:</strong> Software Engineer</p>
+ <i class="fa-solid fa-user profile_icon"></i><h3></h3>
+    <p><strong>Position:</strong></p>
     <p><strong>Email:</strong> tadi@grok.com</p>
     <p><strong>Phone:</strong> (123) 456-7890</p>
     <button class="update_button"><a href="signup.php">Update Profile</a></button>

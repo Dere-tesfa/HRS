@@ -1,28 +1,25 @@
 <?php
 session_start();
-// if(!isset($_SESSION["name"]) || $_SESSION["role"] != "employee") {
-//     header("location:login.php");
-//     exit();
-// }
+if (!isset($_SESSION["name"])) {
+    header("Location: login.php");
+    exit();
+} elseif (isset($_SESSION["role"]) && $_SESSION["role"] === 'employee') {
+    header("Location: login.php");
+    exit();
+}
 ?>
-
-
 <!DOCTYPE html>
 <html lang="en">
-
-<!DOCTYPE html>
-<html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Dashbord</title>
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../font/css/all.css">
-    <link rel="stylesheet" href="../font/css/all.min.css">
-    <script src="../font/js/all.js"></script>
-    <script src="../font/js/all.min.js"></script>
-    <script src="./chart.main.js"></script>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../font/css/all.css">
+    <link rel="stylesheet" href="../../font/css/all.min.css">
+    <script src="../../font/js/all.js"></script>
+    <script src="../../font/js/all.min.js"></script>
+    <script src="../chart.main.js"></script>
 </head>
 
 <body style="background-color: aliceblue;">
@@ -30,33 +27,12 @@ session_start();
     <div class="admin__pages">
 
         <header>
-          <?php include "../include_Components/header.php"?>
+          <?php include "../../include_Components/header.php"?>
         </header>
+        
 
         <aside>
-            <ul class="admin_main_page">
-                <li class="active"> <i class="fa-solid fa-city dashboard_icons
-                        "></i><a class="dashboard_links
-                        " href="#">Dashboard</a></li>
-                <li> <i class="fa-solid fa-people-roof dashboard_icons
-                        "></i><a class="dashboard_links
-                        " href="./Employee-table.php">Employees</a></li>
-                <li> <i class="fa-solid fa-clipboard-user dashboard_icons
-                        "></i><a class="dashboard_links
-                        " href="#">Attendance</a></li>
-                <li> <i class="fa-solid fa-clipboard-user dashboard_icons
-                        "></i><a class="dashboard_links
-                        " href="#">Recruitment</a></li>
-                <li> <i class="fa-brands fa-paypal dashboard_icons
-                        "></i><a class="dashboard_links
-                        " href="#">Payroll</a></li>
-                <li> <i class="fa-solid fa-ban dashboard_icons
-                        "></i><a class="dashboard_links
-                        " href="#">Leave</a></li>
-                <li> <i class="fa-solid fa-gear dashboard_icons
-                        "></i><a class="dashboard_links
-                        " href="#">Setting</a></li>
-            </ul>
+       <?php include "../../include_Components/asideBar.php"?>
         </aside>
         <main>
             <div class="chart_box ">
@@ -69,7 +45,7 @@ session_start();
 
         </main>
         <footer>
-           <?php include "../include_Components/footer.php"?>
+           <?php include "../../include_Components/footer.php"?>
         </footer>
     </div>
     <script>

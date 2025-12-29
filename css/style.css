@@ -738,6 +738,8 @@ footer {
   
 }
 
+ 
+
 /* employee table style */
 .employee-list-container{
  
@@ -841,13 +843,13 @@ tr:nth-child(even) {
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
-.side-nav{
+/* .side-nav{
   position: fixed;
   top: 10vh;
   left: -400px;
   width: 25%;
   height: 90vh;
-  background-color: #c8c2c2;
+  background-color: #f4f1f1;
   z-index: 555;
   padding: 20px;
   transition: left 0.3s ease;
@@ -855,9 +857,9 @@ tr:nth-child(even) {
 .side-nav-lists {
   list-style: none;
   padding: 0;
-}
+} */
 
-.side-nav-items {
+/* .side-nav-items {
   padding: 10px;
   color: #333;
 }
@@ -872,7 +874,7 @@ tr:nth-child(even) {
 .side-nav-lists a {
   text-decoration: none;
   color: inherit;
-}
+} */
 
 /* employee page styles*/
 .employee_main_page{

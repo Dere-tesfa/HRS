@@ -1,3 +1,4 @@
+
 <?php
 session_start();
 // error_reporting(0);
@@ -5,7 +6,7 @@ $host="localhost";
 $user="root";
 $password="";
 $dbname="hr_systems";
-$data=mysqli_connect($host,$user,$password,$dbname);
+$data=new mysqli($host,$user,$password,$dbname);
 if($data===false){
   die("connection error");
 }
@@ -21,7 +22,7 @@ if(isset($_POST["signup"])){
 
     $sql="INSERT INTO hrsystem(fullname,email,phone,address,department,gender,role,password)
     VALUES('$data_name','$data_email','$data_phone','$data_address','$data_dep','$data_gender','$role','$data_password')";
-    $result=mysqli_query($data,$sql);
+    $result=$data->query($sql);
     if($result){
         $_SESSION["message"]="The application is sent successfully!";
         header("location:login.php");

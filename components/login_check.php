@@ -1,49 +1,50 @@
 <?php
 session_start();
-$host="localhost";
-$user="root";
-$password= "";
-$dbname= "hr_systems";
+$host = "localhost";
+$user = "root";
+$password = "";
+$dbname = "hr_systems";
+
 $data = mysqli_connect($host, $user, $password, $dbname);
-if($data === false){
+if ($data === false) {
     die("connection error");
 }
-if($_SERVER["REQUEST_METHOD"] === "POST"){
+
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+
     $name = $_POST["name"];
-    $password_input = $_POST["password"];
+    $password = $_POST["password"];
 
-    // Use prepared statement to prevent SQL injection
-    $sql = "SELECT * FROM users WHERE fullname = ? AND password = ?";
-    $stmt = mysqli_prepare($data, $sql);
-    mysqli_stmt_bind_param($stmt, "ss", $name, $password_input);
-    mysqli_stmt_execute($stmt);
-    $result = mysqli_stmt_get_result($stmt);
+    $sql = "SELECT * FROM hrsystem 
+            WHERE fullname='$name' AND password='$password'";
+    // $sql = "SELECT * FROM users 
+    //         WHERE fullname='$name' AND password='$password'";
 
-    if(mysqli_num_rows($result) > 0){
-        $row = mysqli_fetch_array($result);
+    $result = mysqli_query($data, $sql);
 
-        if($row["role"] == "employee"){
-            // $_SESSION["name"] = $name;
-            header("location:Employee-dashboard.php");
+    if ($row = mysqli_fetch_assoc($result)) {
+
+        $_SESSION["name"] = $row["fullname"];
+        $_SESSION["role"] = $row["role"];
+
+
+        if ($row["role"] == "employee") {
+            header("Location:Employee-dashboard.php");
+
             exit();
-        } elseif($row["role"] == "admin"){
-            // $_SESSION["name"] = $name;
-            header("location:Admin.php");
-            exit();
-        } else {
-            $msg = "Invalid role";
-            $_SESSION["loginMessage"] = $msg;
-            header("location:login.php");
+        } elseif ($row["role"] == "admin") {
+            header("Location:../components/Admin/Admin.php");
             exit();
         }
+           
+
     } else {
-        $msg = "Username and password do not match";
-        $_SESSION["loginMessage"] = $msg;
-        header("location:login.php");
+        $_SESSION["loginMessage"] = "Username and password do not match";
+        header("Location: login.php");
         exit();
     }
 }
 
-
+      
 
 ?>

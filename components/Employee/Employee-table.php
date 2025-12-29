@@ -16,7 +16,7 @@ $result=mysqli_query($data, $sql);
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>employee list</title>
-  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../../css/style.css">
   <link rel="stylesheet" href="../font/css/all.css">
   <link rel="stylesheet" href="../font/css/all.min.css">
   <script src="../font/js/all.js"></script>
@@ -26,12 +26,13 @@ $result=mysqli_query($data, $sql);
 <body>
   <div class="admin__pages">
     <header>
-     <?php require "../include_Components/header.php"?>
+     <?php require "../../include_Components/header.php"?>
+     
     
     </header>
 
     <aside>
-     <?php include "../include_Components/asideBar.php"?>
+     <?php include "../../include_Components/asideBar.php"?>
     </aside>
     
     <main>
@@ -98,7 +99,7 @@ $result=mysqli_query($data, $sql);
 
     </main>
     <footer>
-     <?php include "../include_Components/footer.php"?>
+     <?php include "../../include_Components/footer.php"?>
     </footer>
   </div>
 </body>

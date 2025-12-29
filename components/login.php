@@ -1,9 +1,4 @@
-<?php
-                    error_reporting(0);
-                    session_start();
-                    session_destroy();
-                    echo $_SESSION["loginMessage"];
-                    ?>
+
 
 
 <!DOCTYPE html>
@@ -31,13 +26,13 @@
             <hr>
              <h4 style="color:red">
                     <?php
-                    error_reporting(0);
+                     error_reporting(0);
                     session_start();
-                    session_destroy();
+                     session_destroy();
                     echo $_SESSION["loginMessage"];
                     ?>
                 </h4>
-            <form class="logi_form" action="login_check.php" method="post">
+            <form class="logi_form" action="login_check.php" method="POST">
                 <div class="login__group">
                     <label for="name">Name:</label>
                     <input type="text" id="name" name="name" placeholder="Enter your name">
@@ -46,8 +41,9 @@
                     <label for="password">Password:</label>
                     <input type="password" id="password" name="password" placeholder="Enter your password">
                 </div>
+                <button class="login_button" type="submit">Login</button>
             </form>
-            <button class="login_button">Login</button>
+            
              <p>Don't have account?<a href="signup.php">signup</a></p>
         </div>
     </div>
