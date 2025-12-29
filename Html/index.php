@@ -51,7 +51,7 @@
                     With intuitive dashboards and real-time insights, the system helps HR professionals focus on
                     strategic
                     initiatives while improving employee engagement and organizational productivity.</p>
-                <button class="primary_btn"><a href="../components/Recruitment/viewAdd_job.php">Apply Now</a></button>
+                <button class="primary_btn"><a style="text-decoration: none; color: white;" href="../components/Recruitment/viewAdd_job.php">Apply Now</a></button>
             </div>
 
         </div>
