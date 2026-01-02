@@ -43,7 +43,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
     $phoneNumberError= "* phone is required!";
   }
 
-  }elseif(strlen($phoneNumber)<13){
+  elseif(strlen($phoneNumber)<13){
     $phoneNumberError="* phoneNumber must not be less than 13 digits long! ";
   }
   elseif(strlen($phoneNumber)>13){
@@ -58,10 +58,10 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
   if(empty($department)){
     $depError="* Department is requered!";
   }
-  // $gender=trim($_POST["gender"]);
-  // if(empty($gender)){
-  //   $genderError="* Gender must be selected!";
-  // }
+  $gender=($_POST["gender"]);
+  if(empty($gender)){
+    $genderError="* Gender must be selected!";
+  }
   $password=trim($_POST["password"]);
 if(empty($password)){
   $passwordError= "* password is required!";
@@ -75,7 +75,14 @@ elseif(!preg_match("0-9",$password)){
 elseif(!preg_match("A-Z",$password)){
   $passwordError="Your Password Must Contain At Least 1 Capital Letter!";
 }
-
+$confirm_password=trim($_POST["confirmPassword"]);
+if(empty($confirm_password)){ 
+  $confirmError="* confirm password is required!";
+}
+elseif($password !== $confirm_password){
+  $confirmError="* password did not match!";
+}
+}
 
 ?>
 <html lang="en">
@@ -123,7 +130,7 @@ elseif(!preg_match("A-Z",$password)){
                  echo"".$message."";
 }
              ?>
-        <form class="signup-form" action="signup_check.php" method="post" novalidate>
+        <form class="signup-form" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" novalidate>
           <div class="group_signup">
             <label for="fullName">Full Name:</label>
             <input type="text" id="fullName" name="fullname" placeholder="Enter your full name" required><br>
