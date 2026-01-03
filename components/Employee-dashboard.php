@@ -45,11 +45,10 @@ if ($employee_id) {
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>employee page</title>
-        <link rel="stylesheet" href="/HRS/css/style.css?v=2">
-                <link rel="stylesheet" href="/HRS/font/css/all.css">
-                <link rel="stylesheet" href="/HRS/font/css/all.min.css">
-                <script src="/HRS/font/js/all.js"></script>
-                <script src="/HRS/font/js/all.min.js"></script>
+          <link rel="stylesheet" href="../css/style.css?v=2">
+                    <link rel="stylesheet" href="../font/css/all.css">
+                    <link rel="stylesheet" href="../font/css/all.min.css">
+                    <script src="../font/js/all.min.js" defer></script>
 </head>
 <body>
   <header>
