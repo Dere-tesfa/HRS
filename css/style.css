@@ -1069,3 +1069,131 @@ gap: 10px;
     gap: 20px;
   }
 }
+
+/* Admin entities styles */
+/* ===============================
+   ADMIN ENTITIES – STATS DASHBOARD
+================================ */
+
+.admin-entities {
+    padding: 20px;
+}
+
+.admin-entities .entities-container {
+    max-width: 1200px;
+    margin: auto;
+}
+
+.admin-entities .entities-title {
+    font-size: 26px;
+    font-weight: 600;
+    color: #1577b6;
+    margin-bottom: 25px;
+}
+
+/* Row layout */
+.admin-entities .entities-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 22px;
+}
+
+.admin-entities .entity-card {
+    flex: 1 1 calc(33.333% - 22px);
+    min-width: 260px;
+    background: #ffffff;
+    border-radius: 14px;
+    padding: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.admin-entities .entity-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 18px 40px rgba(0,0,0,0.15);
+}
+
+.admin-entities .entity-head {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    font-size: 18px;
+}
+
+.admin-entities .entity-icon {
+    font-size: 24px;
+    padding: 14px;
+    border-radius: 12px;
+    color: #fff;
+}
+
+.emp-icon { background: #27b8d5; }
+.att-icon { background: #22c55e; }
+.leave-icon { background: #f97316; }
+.jobs-icon { background: #6366f1; }
+.tasks-icon { background: #eab308; }
+.payroll-icon { background: #ef4444; }
+
+/* Numbers */
+.admin-entities .entity-stat {
+    font-size: 38px;
+    font-weight: 700;
+    margin: 14px 0 4px;
+    color: #0f172a;
+}
+
+.admin-entities .entity-label {
+    font-size: 14px;
+    color: #64748b;
+    margin-bottom: 18px;
+}
+
+/* Actions */
+.admin-entities .entity-actions {
+    margin-top: auto;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.admin-entities .btn {
+    padding: 9px 18px;
+    border-radius: 8px;
+    border: none;
+    background: #1577b6;
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background 0.25s ease, transform 0.2s ease;
+}
+
+.admin-entities .btn:hover {
+    background: #0f5d8f;
+    transform: scale(1.05);
+}
+
+.admin-entities .export-btn {
+    background: #27b8d5;
+}
+
+.admin-entities .export-btn:hover {
+    background: #1aa3be;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .admin-entities .entity-card {
+        flex: 1 1 calc(50% - 22px);
+    }
+}
+
+@media (max-width: 600px) {
+    .admin-entities .entity-card {
+        flex: 1 1 100%;
+    }
+}
+
+
+
