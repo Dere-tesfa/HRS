@@ -21,7 +21,7 @@ if (!isset($_SESSION["name"])) {
     <script src="../../font/js/all.min.js"></script>
 </head>
 
-<body style="background-color: aliceblue;">
+<body>
 
     <div class="admin__pages">
 
@@ -33,12 +33,99 @@ if (!isset($_SESSION["name"])) {
        <?php include "../../include_Components/asideBar.php"?>
         </aside>
         <main>
-            <div class="chart_box ">
-                <canvas id="barChart"></canvas>
+           <section class="admin-entities">
+    <div class="entities-container">
+        <h2 class="entities-title">Manage Entities</h2>
+
+        <div class="entities-grid">
+
+            <!-- Employees -->
+            <div class="entity-card">
+                <div class="entity-head">
+                    <i class="fa-solid fa-users entity-icon emp-icon"></i>
+                    <strong>Employees</strong>
+                </div>
+                <div class="entity-stat">1,248</div>
+                <p class="entity-label">Total Employees</p>
+                <div class="entity-actions">
+                    <a class="btn" href="../Employee/Employee-table.php">View</a>
+                
+                </div>
             </div>
-            <div class="chart_box">
-                <canvas id="pieChart"></canvas>
+
+            <!-- Attendance -->
+            <div class="entity-card">
+                <div class="entity-head">
+                    <i class="fa-solid fa-clock entity-icon att-icon"></i>
+                    <strong>Attendance</strong>
+                </div>
+                <div class="entity-stat">892</div>
+                <p class="entity-label">Present Today</p>
+                <div class="entity-actions">
+                    <a class="btn" href="../manage_attendance.php">View</a>
+                 
+                </div>
             </div>
+
+            <!-- Leave -->
+            <div class="entity-card">
+                <div class="entity-head">
+                    <i class="fa-solid fa-plane-departure entity-icon leave-icon"></i>
+                    <strong>Leave</strong>
+                </div>
+                <div class="entity-stat">34</div>
+                <p class="entity-label">Pending Requests</p>
+                <div class="entity-actions">
+                    <a class="btn" href="../leave/manage_leave.php">View</a>
+                  
+                </div>
+            </div>
+
+            <!-- Jobs / Recruitment -->
+            <div class="entity-card">
+                <div class="entity-head">
+                    <i class="fa-solid fa-briefcase entity-icon jobs-icon"></i>
+                    <strong>Recruitment</strong>
+                </div>
+                <div class="entity-stat">12</div>
+                <p class="entity-label">Open Positions</p>
+                <div class="entity-actions">
+                    <a class="btn" href="../Recruitment/manege_jobs.php">View</a>
+                    
+                </div>
+            </div>
+
+            <!-- Tasks -->
+            <div class="entity-card">
+                <div class="entity-head">
+                    <i class="fa-solid fa-list-check entity-icon tasks-icon"></i>
+                    <strong>Tasks</strong>
+                </div>
+                <div class="entity-stat">76</div>
+                <p class="entity-label">Open Tasks</p>
+                <div class="entity-actions">
+                    <a class="btn" href="../tasks/manage_tasks.php">View</a>
+                </div>
+            </div>
+
+            <!-- Payroll -->
+            <div class="entity-card">
+                <div class="entity-head">
+                    <i class="fa-solid fa-money-check-dollar entity-icon payroll-icon"></i>
+                    <strong>Payroll</strong>
+                </div>
+                <div class="entity-stat">1,210</div>
+                <p class="entity-label">Payslips Generated</p>
+                <div class="entity-actions">
+                    <a class="btn" href="../payroll/manage_payroll.php">View</a>
+                    <a class="btn" href="../payroll/add_payslip.php">Add</a>
+                    <button class="btn">Export CSV</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
 
 
         </main>
@@ -46,49 +133,8 @@ if (!isset($_SESSION["name"])) {
            <?php include "../../include_Components/footer.php"?>
         </footer>
     </div>
-    <script>
-        // Colors (matching your image)
-        const c1 = "#76e9f0";
-        const c2 = "#27b8d5";
-        const c3 = "#1577b6";
-
-        // BAR CHART
-        new Chart(document.getElementById("barChart"), {
-            type: 'bar',
-            data: {
-                labels: ["Item 1", "Item 2", "Item 3", "Item 4"],
-                datasets: [
-                    { label: "Series 1", data: [6, 89, 17, 20], backgroundColor: c1 },
-                    { label: "Series 2", data: [7, 10, 82, 98], backgroundColor: c2 },
-                    { label: "Series 3", data: [56, 8, 7, 12], backgroundColor: c3 }
-                ]
-            },
-            options: {
-                plugins: { legend: { position: "top" } },
-                scales: {
-                    x: { stacked: true },
-                    y: { stacked: true }
-                }
-            }
-        });
-
-
-        //PIE CHART
-
-        new Chart(document.getElementById("pieChart"), {
-            type: "pie",
-            data: {
-                labels: ["Item 1", "Item 2", "Item 3"],
-                datasets: [{
-                    data: [50, 20, 10],
-                    backgroundColor: [c1, c2, c3]
-                }]
-            },
-            options: {
-                plugins: { legend: { position: "right" } }
-            }
-        });
-    </script>
+    
+           
 </body>
 
 </html>
