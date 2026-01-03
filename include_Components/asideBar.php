@@ -26,6 +26,10 @@
      .dashboard_links .submenu li:hover{
         background: #000;
      }
+    .submenu:hover li:hover {
+        background-color: #6fbae9ff;
+        color: black;
+    }
     .submenu{
         display: none;
         padding-left: 30px;
@@ -48,8 +52,8 @@
 <ul class="admin_main_page">
 
     <!-- Dashboard -->
-    <li>
-        <a class="dashboard_links" href="../Admin/Admin.php">🏠 Dashboard</a>
+    <li class="active">
+        <a class="dashboard_links " href="../Admin/Admin.php">🏠 Dashboard</a>
     </li>
 
     <!-- Employees -->
@@ -61,14 +65,6 @@
         </ul>
     </li>
 
-    <!-- Attendance -->
-    <li class="has-submenu">
-        <a class="dashboard_links" href="#">🕒 Attendance</a>
-        <ul class="submenu">
-            <li><a href="add_attendance.php">➕ Mark Attendance</a></li>
-            <li><a href="manage_attendance.php">📋 View Attendance</a></li>
-        </ul>
-    </li>
 
     <!-- Recruitment -->
     <li class="has-submenu">

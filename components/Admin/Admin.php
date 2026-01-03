@@ -35,6 +35,7 @@ if (!isset($_SESSION["name"])) {
         <main>
            <section class="admin-entities">
     <div class="entities-container">
+         <h1>Welcome, <?php echo htmlspecialchars($_SESSION['name']); ?></h1>
         <h2 class="entities-title">Manage Entities</h2>
 
         <div class="entities-grid">

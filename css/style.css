@@ -1570,6 +1570,14 @@ tr:nth-child(even) {
     gap: 14px;
     font-size: 18px;
 }
+.admin_active{
+    background-color: #1577b6;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    margin-left: auto;
+}
 
 .admin-entities .entity-icon {
     font-size: 24px;
