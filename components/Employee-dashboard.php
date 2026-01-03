@@ -8,6 +8,35 @@ if (!isset($_SESSION["name"])) {
     header("Location: login.php");
     exit();
 }
+require_once __DIR__ . '/db_connect.php';
+$mysqli = getDB();
+
+// resolve employee id for logged in user
+$employee_id = null;
+if (!empty($_SESSION['user_id'])) {
+        $uid = (int) $_SESSION['user_id'];
+        $stmt = $mysqli->prepare('SELECT id FROM employees WHERE user_id = ? LIMIT 1');
+        if ($stmt) {
+                $stmt->bind_param('i', $uid);
+                $stmt->execute();
+                $stmt->bind_result($employee_id);
+                $stmt->fetch();
+                $stmt->close();
+        }
+}
+
+// count pending leaves for this employee
+$pendingLeaves = 0;
+if ($employee_id) {
+        $stmt = $mysqli->prepare('SELECT COUNT(*) FROM leaves WHERE employee_id = ? AND status = "pending"');
+        if ($stmt) {
+                $stmt->bind_param('i', $employee_id);
+                $stmt->execute();
+                $stmt->bind_result($pendingLeaves);
+                $stmt->fetch();
+                $stmt->close();
+        }
+}
 ?>
 
 
@@ -16,96 +45,11 @@ if (!isset($_SESSION["name"])) {
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>employee page</title>
-  <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../font/css/all.css">
-    <link rel="stylesheet" href="../font/css/all.min.css">
-    <script src="../font/js/all.js"></script>
-    <script src="../font/js/all.min.js"></script>
-    <style>
-        /* KPI / Employee-dashboard specific styles (moved from inline in Employee-dashboard.php) */
-.kpi-card {
-  background-color: #ffffff;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  padding: 20px;
-  text-align: center;
-  width: 200px;
-}
-.kpi-card h3 {
-  margin-bottom: 10px;
-  font-size: 18px;
-  color: #333333;
-}
-.kpi-card p {
-  font-size: 24px;
-  font-weight: bold;
-  color: #0fa9d8;
-}
-
-.kpi-container {
-        display: flex;
-        justify-content: space-around;
-        flex-wrap: wrap;
-        gap: 20px;
-        margin-top: 20px;
-    }
-.kpi-icon {
-        font-size: 36px;
-        color: #0fa9d8;
-        margin-bottom: 10px;
-    }
-.kpi-label {
-        font-size: 16px;
-        color: #555555;
-    }
-.kpi-value {
-        font-size: 28px;
-        font-weight: bold;
-        color: #0fa9d8;
-    }
-.kpi-table {
-        width: 100%;
-        border-collapse: collapse;
-    }
-.kpi-table th, .kpi-table td {
-        border: 1px solid #ddd;
-        padding: 8px;
-    }
-.kpi-table th {
-        background-color: #f2f2f2;
-        text-align: left;
-    }
-.modal {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.5);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-.modal-content {
-        background: #fff;
-        padding: 20px;
-        border-radius: 5px;
-        width: 80%;
-        max-height: 80%;
-        overflow-y: auto;
-        position: relative;
-    }
-.modal-close {
-        position: absolute;
-        top: 10px;
-        right: 10px;
-        background: none;
-        border: none;
-        font-size: 24px;
-        cursor: pointer;
-    }
-
-    </style>
+        <link rel="stylesheet" href="/HRS/css/style.css?v=2">
+                <link rel="stylesheet" href="/HRS/font/css/all.css">
+                <link rel="stylesheet" href="/HRS/font/css/all.min.css">
+                <script src="/HRS/font/js/all.js"></script>
+                <script src="/HRS/font/js/all.min.js"></script>
 </head>
 <body>
   <header>
@@ -136,109 +80,53 @@ if (!isset($_SESSION["name"])) {
                         " href="../components/leave/Add_leave.php">Leave</a></li>
             </ul>
         </aside>
- 
-<main class="content">
-        <section class="kpi-section">
-                <h1>Overview</h1>
-                <div class="kpi-container">
-                        <div class="kpi-grid">
-                        <div class="kpi-card" data-metric="headcount" onclick="fetchDetails('headcount')">
-                                <div class="kpi-icon"><i class="fa-solid fa-users"></i></div>
-                                <div class="kpi-body">
-                                        <div class="kpi-label">Headcount</div>
-                                        <div class="kpi-value" id="headcount-count">—</div>
-                                </div>
+        <main class="main-content">
+                <div class="container">
+                        <h1>Welcome, <?php echo htmlspecialchars($_SESSION['name']); ?></h1>
+                        <p>Quick links and summary for your account.</p>
+
+                        <div class="card-grid">
+                                <a class="card-link" href="Employee-profile.php">
+                                        <div class="card">
+                                                <div class="card-icon"><i class="fa-solid fa-user"></i></div>
+                                                <div class="card-body">
+                                                        <h3>Profile</h3>
+                                                        <p>View or update your personal information.</p>
+                                                </div>
+                                        </div>
+                                </a>
+
+                                <a class="card-link" href="leave/Add_leave.php">
+                                        <div class="card">
+                                                <div class="card-icon card-icon--accent"><i class="fa-solid fa-calendar-days"></i></div>
+                                                <div class="card-body">
+                                                        <h3>Request Leave</h3>
+                                                        <p><?php echo (int)$pendingLeaves; ?> pending request(s)</p>
+                                                </div>
+                                        </div>
+                                </a>
+
+                                <a class="card-link" href="../components/Recruitment/add_job.php">
+                                        <div class="card">
+                                                <div class="card-icon"><i class="fa-solid fa-briefcase"></i></div>
+                                                <div class="card-body">
+                                                        <h3>Jobs</h3>
+                                                        <p>View open positions and apply.</p>
+                                                </div>
+                                        </div>
+                                </a>
                         </div>
 
-                        <div class="kpi-card" data-metric="active_today" onclick="fetchDetails('active_today')">
-                                <div class="kpi-icon"><i class="fa-solid fa-clock"></i></div>
-                                <div class="kpi-body">
-                                        <div class="kpi-label">Active Today</div>
-                                        <div class="kpi-value" id="active-count">—</div>
-                                </div>
-                        </div>
-
-                        <div class="kpi-card" data-metric="pending_leave" onclick="fetchDetails('pending_leave')">
-                                <div class="kpi-icon"><i class="fa-solid fa-plane-departure"></i></div>
-                                <div class="kpi-body">
-                                        <div class="kpi-label">Pending Leave</div>
-                                        <div class="kpi-value" id="pending-count">—</div>
-                                </div>
-                        </div>
-
-                        <div class="kpi-card" data-metric="open_tasks" onclick="fetchDetails('open_tasks')">
-                                <div class="kpi-icon"><i class="fa-solid fa-list-check"></i></div>
-                                <div class="kpi-body">
-                                        <div class="kpi-label">Open Tasks</div>
-                                        <div class="kpi-value" id="tasks-count">—</div>
-                                </div>
+                        <div class="actions-panel">
+                                <h2>Things you can do</h2>
+                                <ul class="actions-list">
+                                        <li><a class="action-link" href="Employee-profile.php">View / Edit Profile</a></li>
+                                        <li><a class="action-link" href="leave/Add_leave.php">Request Leave</a></li>
+                                        <li><a class="action-link" href="leave/">My Leaves</a></li>
+                                        <li><a class="action-link" href="../components/Recruitment/viewAdd_job.php">View Jobs</a></li>
+                                </ul>
                         </div>
                 </div>
-        </section>
-
-        <div id="details-modal" class="modal" style="display:none;">
-                <div class="modal-content">
-                        <button id="modal-close" class="modal-close">×</button>
-                        <h3 id="modal-title">Details</h3>
-                        <div id="modal-body">Loading…</div>
-                </div>
-                        </div>
-                </div>
-</main>
-
-<!-- KPI styles moved to ../css/style.css -->
-
-<script>
-async function loadKpis(){
-        try{
-                const res = await fetch('kpi_api.php');
-                const data = await res.json();
-                document.getElementById('headcount-count').textContent = data.headcount ?? '0';
-                document.getElementById('active-count').textContent = data.active_today ?? '0';
-                document.getElementById('pending-count').textContent = data.pending_leave ?? '0';
-                document.getElementById('tasks-count').textContent = data.open_tasks ?? '0';
-        }catch(e){
-                console.error('KPI load failed', e);
-        }
-}
-
-async function fetchDetails(metric){
-        const modal = document.getElementById('details-modal');
-        const body = document.getElementById('modal-body');
-        const title = document.getElementById('modal-title');
-        title.textContent = metric.replace('_',' ').toUpperCase();
-        body.innerHTML = 'Loading…';
-        modal.style.display = 'flex';
-        try{
-                const res = await fetch('kpi_api.php?action=details&metric='+encodeURIComponent(metric));
-                const j = await res.json();
-                const rows = j.rows || [];
-                if(rows.length === 0){
-                        body.innerHTML = '<div>No records found.</div>';
-                        return;
-                }
-                // build simple table
-                const keys = Object.keys(rows[0]);
-                let html = '<table class="kpi-table"><thead><tr>' + keys.map(k=>'<th>'+k+'</th>').join('') + '</tr></thead><tbody>';
-                for(const r of rows){
-                        html += '<tr>' + keys.map(k=>'<td>'+ (r[k]===null? '': escapeHtml(''+r[k])) +'</td>').join('') + '</tr>';
-                }
-                html += '</tbody></table>';
-                body.innerHTML = html;
-        }catch(e){
-                body.innerHTML = '<div>Error fetching details</div>';
-                console.error(e);
-        }
-}
-
-function escapeHtml(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')}
-
-document.addEventListener('DOMContentLoaded', function(){
-        document.getElementById('modal-close').addEventListener('click',()=>{document.getElementById('details-modal').style.display='none'});
-        loadKpis();
-        setInterval(loadKpis, 60*1000);
-});
-</script>
-
-</body>
-</html>
+        </main>
+        </body>
+        </html>
