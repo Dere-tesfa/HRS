@@ -49,11 +49,7 @@ $hire_date = $row['hire_date'] ?? '';
 
 <body>
         <header>
-                <div class="header_content">
-                        <div class="header-logo"><a href="../Html/index.php"><img src="../images/logo.png" alt="logo"></a>
-                        </div>
-                        <h2>HR-System</h2>
-                </div>
+                <?php include_once __DIR__ . '/../include_Components/header.php'; ?>
         </header>
         <div class="employee_page_container">
                 <aside class="employee_dashboard">

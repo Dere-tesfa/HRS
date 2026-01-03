@@ -14,12 +14,11 @@ if (!isset($_SESSION["name"])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Dashbord</title>
-    <link rel="stylesheet" href="../../css/style.css">
+           <link rel="stylesheet" href="/HRS/css/style.css?v=2">
     <link rel="stylesheet" href="../../font/css/all.css">
     <link rel="stylesheet" href="../../font/css/all.min.css">
     <script src="../../font/js/all.js"></script>
     <script src="../../font/js/all.min.js"></script>
-    <script src="../chart.main.js"></script>
 </head>
 
 <body style="background-color: aliceblue;">
@@ -30,7 +29,6 @@ if (!isset($_SESSION["name"])) {
           <?php include "../../include_Components/header.php"?>
         </header>
         
-
         <aside>
        <?php include "../../include_Components/asideBar.php"?>
         </aside>
