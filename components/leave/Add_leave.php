@@ -78,9 +78,22 @@
 </head>
 <body>
     <?php
-    
-    
+    if (session_status() === PHP_SESSION_NONE) session_start();
+    $leave_errors = $_SESSION['leave_errors'] ?? [];
+    $leave_success = $_SESSION['leave_success'] ?? '';
+    unset($_SESSION['leave_errors'], $_SESSION['leave_success']);
     ?>
+
+    <?php if (!empty($leave_errors)): ?>
+        <div style="color:#b00020;margin-bottom:12px;">
+            <?php foreach ($leave_errors as $e) echo '<div>' . htmlspecialchars($e) . '</div>'; ?>
+        </div>
+    <?php endif; ?>
+    <?php if (!empty($leave_success)): ?>
+        <div style="color:green;margin-bottom:12px;">
+            <?php echo htmlspecialchars($leave_success); ?>
+        </div>
+    <?php endif; ?>
 
 <div class="leave-container">
     <h2>Leave Request Form</h2>
@@ -90,12 +103,7 @@
         
         <div class="form-group">
             <label>Employee Name</label>
-            <input type="text" name="employee_name" required>
-        </div>
-
-        <div class="form-group">
-            <label>Employee ID</label>
-            <input type="text" name="employee_id" required>
+            <input type="text" name="employee_name" value="<?php echo isset($_SESSION['name']) ? htmlspecialchars($_SESSION['name']) : ''; ?>" required>
         </div>
 
         <div class="form-group">
