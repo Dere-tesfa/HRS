@@ -1,87 +1,21 @@
-<?php 
+
+<?php
 session_start();
 error_reporting(0);
 
-$FullName="";
-$fullNameError="";
-$email="";
-$emailError= "";
-$phoneNumber="";
-$phoneNumberError= "";
-$department="";
-$depError="";
-$address="";
-$addError="";
-$gender="";
-$genderError= "";
-$password="";
-$passwordError= "";
-$confirm_password= "";
-$confirmError="";
-// check methods
-if($_SERVER["REQUEST_METHOD"]=="POST"){
-  //fullName validation
-  $FullName=trim( $_POST["fullName"]);
-  if(empty($FullName)){
-    $fullNameError="* Name is requered!";
-  }
-  elseif(strlen($FullName)<3){
-    
-    $fullNameError= "* Name must be at least 3 character!";
-  }
-  //email validation
- $email=trim( $_POST["email"]);
-  if(empty($email)){
-    $emailError= "* Email is required!";
-  }
-  elseif(!filter_var($email, FILTER_VALIDATE_EMAIL)){
-    $emailError="invalid email format!";
-  }
-  //phoneNumber validetion
-  $phoneNumber=trim($_POST["phone"]);
-  if(empty($phoneNumber)){
-    $phoneNumberError= "* phone is required!";
-  }
+$errors = $_SESSION['errors'] ?? [];
+$old = $_SESSION['old'] ?? [];
+$message = $_SESSION['message'] ?? '';
+unset($_SESSION['errors'], $_SESSION['old'], $_SESSION['message']);
 
-  elseif(strlen($phoneNumber)<13){
-    $phoneNumberError="* phoneNumber must not be less than 13 digits long! ";
-  }
-  elseif(strlen($phoneNumber)>13){
-    $phoneNumberError="* phoneNumber must not be greater than 13 digits long! ";
-  }
-  // Address validation
-  $address=trim($_POST["address"]);
-  if(empty($address)){
-    $addError="* Address is requered!";
-  }
-  $department=trim($_POST["department"]);
-  if(empty($department)){
-    $depError="* Department is requered!";
-  }
-  $gender=($_POST["gender"]);
-  if(empty($gender)){
-    $genderError="* Gender must be selected!";
-  }
-  $password=trim($_POST["password"]);
-if(empty($password)){
-  $passwordError= "* password is required!";
+function old($key, $default = '') {
+    global $old;
+    return htmlspecialchars($old[$key] ?? $default);
 }
-elseif(strlen($password)< 8){
-  $passwordError= "Your Password Must Contain At Least 8 Characters!";
-}
-elseif(!preg_match("0-9",$password)){
-  $passwordError= "Your Password Must Contain At Least 1 Number!";
-}
-elseif(!preg_match("A-Z",$password)){
-  $passwordError="Your Password Must Contain At Least 1 Capital Letter!";
-}
-$confirm_password=trim($_POST["confirmPassword"]);
-if(empty($confirm_password)){ 
-  $confirmError="* confirm password is required!";
-}
-elseif($password !== $confirm_password){
-  $confirmError="* password did not match!";
-}
+
+function err($key) {
+    global $errors;
+    return isset($errors[$key]) ? '<span class="error">' . $errors[$key] . '</span>' : '';
 }
 
 ?>
@@ -130,55 +64,58 @@ elseif($password !== $confirm_password){
                  echo"".$message."";
 }
              ?>
-        <form class="signup-form" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" novalidate>
+        <form class="signup-form" action="signup_check.php" method="post" novalidate>
           <div class="group_signup">
             <label for="fullName">Full Name:</label>
-            <input type="text" id="fullName" name="fullname" placeholder="Enter your full name" required><br>
-           <span class="error"><?php echo $fullNameError?></span>
+            <input type="text" id="fullName" name="fullname" placeholder="Enter your full name" value="<?php echo old('fullname'); ?>" required><br>
+           <?php echo err('fullname'); ?>
           </div>
           <div class="signup_column">
             <div class="group_signup">
               <label for="email">Email:</label>
-              <input type="email" id="email" name="email" placeholder="Enter your email" required><br>
-              <span class="error"><?php echo $emailError?></span>
+              <input type="email" id="email" name="email" placeholder="Enter your email" value="<?php echo old('email'); ?>" required><br>
+              <?php echo err('email'); ?>
             </div>
             <div class="group_signup">
               <label for="phone">Phone:</label>
-              <input type="tel" id="phone" name="phone" value="+251" required><br>
-              <span class="error"><?php echo $phoneNumberError?></span>
+              <input type="tel" id="phone" name="phone" value="<?php echo old('phone', '+251'); ?>" required><br>
+              <?php echo err('phone'); ?>
             </div>
           </div>
           <div class="signup_column">
             <div class="group_signup">
               <label for="address">Address:</label>
-              <input type="text" id="address" name="address" placeholder="Enter your address" required><br>
-              <span class="error"><?php echo $addError?></span>
+              <input type="text" id="address" name="address" placeholder="Enter your address" value="<?php echo old('address'); ?>" required><br>
+              <?php echo err('address'); ?>
             </div>
             <div class="group_signup">
               <label for="department">Department:</label>
-              <input type="text" id="department" name="department" placeholder="Enter your department" required><br>
-              <span class="error"><?php echo $depError?></span>
+              <input type="text" id="department" name="department" placeholder="Enter your department" value="<?php echo old('department'); ?>" required><br>
+              <?php echo err('department'); ?>
             </div>
           </div>
           <div class="group_gender">
             <label for="gender">Gender:</label>
-            <input type="radio" name="gender" id="male" value="male"> Male
-            <input type="radio" name="gender" id="female" value="female"> Female
+            <input type="radio" name="gender" id="male" value="male" <?php echo (old('gender') === 'male') ? 'checked' : ''; ?>> Male
+            <input type="radio" name="gender" id="female" value="female" <?php echo (old('gender') === 'female') ? 'checked' : ''; ?>> Female
           </div>
-          <div class="error"><?php echo $genderError?></div>
+          <div class="error"><?php echo err('gender'); ?></div>
           <div class="signup_column">
             <div class="group_signup">
               <label for="password">Password:</label>
               <input type="password" id="password" name="password" placeholder="Enter your password" required><br>
-                      <span class="error"><?php echo $passwordError?></span>
+                      <?php echo err('password'); ?>
             </div>
             <div class="group_signup">
               <label for="confirmPassword">Confirm Password:</label>
               <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm your password"
                 required><br>
-                        <span class="error"><?php echo $confirmError?></span>
+                        <?php echo err('confirmPassword'); ?>
             </div>
           </div>
+          <?php if (!empty($errors) && isset($errors['general'])): ?>
+            <div class="error"><?php echo $errors['general']; ?></div>
+          <?php endif; ?>
           <input type="checkbox" name="terms" id="terms">
           I agree to the terms and conditions
           <button class="signup-form-btn" type="submit" name="signup">signup</button>
