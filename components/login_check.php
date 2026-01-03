@@ -1,14 +1,8 @@
 <?php
 session_start();
-$host = "localhost";
-$user = "root";
-$password = "";
-$dbname = "hr_systems";
+require_once __DIR__ . '/db_connect.php';
+$data = getDB();
 
-$data = mysqli_connect($host, $user, $password, $dbname);
-if ($data === false) {
-    die("connection error");
-}
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
@@ -23,7 +17,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $result = mysqli_query($data, $sql);
 
     if ($row = mysqli_fetch_assoc($result)) {
-
+        session_regenerate_id(true);
+        $_SESSION["logged_in"] = true;
         $_SESSION["name"] = $row["fullname"];
         $_SESSION["role"] = $row["role"];
 

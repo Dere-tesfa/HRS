@@ -2,14 +2,9 @@
 <?php
 session_start();
 // error_reporting(0);
-$host="localhost";
-$user="root";
-$password="";
-$dbname="hr_systems";
-$data=new mysqli($host,$user,$password,$dbname);
-if($data===false){
-  die("connection error");
-}
+require_once __DIR__ . '/db_connect.php';
+$data = getDB();
+
 if(isset($_POST["signup"])){
     $data_name=$_POST["fullname"];
     $data_email=$_POST["email"];
