@@ -71,8 +71,8 @@
         <a class="dashboard_links" href="#">📄 Recruitment</a>
         <ul class="submenu">
             <li><a href="../Recruitment/add_job.php">➕ Add Job</a></li>
-            <li><a href="../Recruitment/manege_jobs.php">📋 Manage Jobs</a></li>
-            <li><a href="../Recruitment/applications.php">📨 Applications</a></li>
+            <li><a href="../Recruitment/viewAdd_job.php">📋 Manage Jobs</a></li>
+            <li><a href="../Recruitment/manege_jobs.php">📨 Applications</a></li>
         </ul>
     </li>
 
