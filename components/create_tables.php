@@ -57,8 +57,13 @@ $sql[] = "CREATE TABLE IF NOT EXISTS leaves (
 
 $sql[] = "CREATE TABLE IF NOT EXISTS jobs (
     id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-    title VARCHAR(150) NOT NULL,
+    job_title VARCHAR(255) NOT NULL,
+    department VARCHAR(255) NOT NULL,
+    job_type VARCHAR(255) NOT NULL,
+    salary DECIMAL(10, 2) NOT NULL,
+    location VARCHAR(255) NOT NULL,
     description TEXT,
+    deadline DATE,
     posted_by INT UNSIGNED,
     posted_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (posted_by) REFERENCES hrsystem(id) ON DELETE SET NULL

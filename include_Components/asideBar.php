@@ -79,6 +79,9 @@
             <li><a href="../Recruitment/add_job.php"><i class="fa-solid fa-plus"></i> Add Job</a></li>
             <li><a href="../Recruitment/manege_jobs.php"><i class="fa-solid fa-list"></i> Manage Jobs</a></li>
             <li><a href="../Recruitment/applications.php"><i class="fa-solid fa-envelope"></i> Applications</a></li>
+            <li><a href="../Recruitment/add_job.php">➕ Add Job</a></li>
+            <li><a href="../Recruitment/viewAdd_job.php">📋 Manage Jobs</a></li>
+            <li><a href="../Recruitment/manege_jobs.php">📨 Applications</a></li>
         </ul>
     </li>
 
