@@ -81,6 +81,19 @@ $sql[] = "CREATE TABLE IF NOT EXISTS job_applications (
     FOREIGN KEY (job_id) REFERENCES jobs(id) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4";
 
+$sql[] = "CREATE TABLE IF NOT EXISTS job_applications_raw (
+      id INT AUTO_INCREMENT PRIMARY KEY,
+    fname VARCHAR(100) NOT NULL,
+    lname VARCHAR(100) NOT NULL,
+    email VARCHAR(150) NOT NULL,
+    phone VARCHAR(30) NOT NULL,
+    appliedPosition VARCHAR(150) NOT NULL,
+    applied_date DATE NOT NULL,
+    coverletter TEXT NOT NULL,
+    uploadresume VARCHAR(255) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4";
+
 
 foreach ($sql as $stmt) {
     if (!$conn->query($stmt)) {

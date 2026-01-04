@@ -77,11 +77,9 @@
         <a class="dashboard_links" href="#"><i class="fa-solid fa-briefcase"></i> Recruitment</a>
         <ul class="submenu">
             <li><a href="../Recruitment/add_job.php"><i class="fa-solid fa-plus"></i> Add Job</a></li>
-            <li><a href="../Recruitment/manege_jobs.php"><i class="fa-solid fa-list"></i> Manage Jobs</a></li>
-            <li><a href="../Recruitment/applications.php"><i class="fa-solid fa-envelope"></i> Applications</a></li>
-            <li><a href="../Recruitment/add_job.php">➕ Add Job</a></li>
-            <li><a href="../Recruitment/viewAdd_job.php">📋 Manage Jobs</a></li>
-            <li><a href="../Recruitment/manege_jobs.php">📨 Applications</a></li>
+            <li><a href="../Recruitment/viewAdd_job.php"><i class="fa-solid fa-list"></i> Manage Jobs</a></li>
+            <li><a href="../Recruitment/manege_jobs.php"><i class="fa-solid fa-envelope"></i> Applications</a></li>
+
         </ul>
     </li>
 
@@ -98,7 +96,7 @@
     <li class="has-submenu">
         <a class="dashboard_links" href="#"><i class="fa-solid fa-ban"></i> Leave</a>
         <ul class="submenu">
-            <li><a href="../leave/Add_leave.php"><i class="fa-solid fa-plus"></i> Leave Request</a></li>
+           
             <li><a href="manage_leave.php"><i class="fa-solid fa-list"></i> Manage Leave</a></li>
         </ul>
     </li>
