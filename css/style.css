@@ -1130,19 +1130,17 @@ td {
   border-collapse: collapse;
   padding: 10px;
   border: 1px solid rgb(236, 232, 232);
-  background-color: #bcb0b0;
+  
   box-shadow: 1px .1px 2px .1px rgb(240, 231, 231);
 }
 
 th {
-  background-color: var(--main-color);
+  background-color: #06def1;
   color: white;
   font-weight: bolder;
 }
 
-tr:nth-child(even) {
-  background-color: #f5ebeb;
-}
+
 
 .detail-btn {
   padding: 8px;
@@ -1495,6 +1493,9 @@ tr:nth-child(even) {
   }
 }
 
+tr:nth-of-type(even) {
+    background-color: #10e4cc;
+}
 
 /* responsive footer */
 @media screen and (max-width: 768px) {
@@ -1651,6 +1652,68 @@ tr:nth-child(even) {
         flex: 1 1 100%;
     }
 }
+
+/* Employee table styles */
+.employee-list-container{
+  padding: 18px;
+  overflow-x: auto;
+  max-width: 1000px;
+  margin: auto;
+
+}
+.employee-list-container::-webkit-scrollbar{
+  display: none;
+}
+
+
+
+.styled-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 16px 0;
+  font-size: 14px;
+  min-width: 600px;
+  background: #ffffff;
+  box-shadow: 0 4px 14px rgba(2,6,23,0.06);
+}
+
+.styled-table thead th {
+  background: var(--main-color);
+  color: #fff;
+  text-align: left;
+  padding: 12px 14px;
+  font-weight: 600;
+}
+
+.styled-table tbody td {
+  padding: 10px 14px;
+  border-bottom: 1px solid rgba(15,18,32,0.06);
+  color: #0b1220;
+}
+
+.styled-table tbody tr:nth-child(even) {
+  background: #f7fbfb;
+}
+
+.styled-table tbody tr:hover {
+  background: rgba(15,18,32,0.03);
+}
+
+.styled-table .actions a,
+.styled-table .actions button{
+  display: inline-block;
+  padding: 6px 10px;
+  border-radius: 6px;
+  text-decoration: none;
+  background: var(--main-color);
+  color: #fff;
+  border: none;
+}
+
+@media (max-width: 800px){
+  .styled-table{min-width: 480px; font-size: 13px}
+}
+
 
 
 

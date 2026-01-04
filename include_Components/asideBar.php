@@ -41,8 +41,14 @@
     }
     .submenu li a{
         font-size: 14px;
+        
     }
-   
+    .dashboard_links i, 
+.submenu li a i{
+    color: aqua;
+    margin-right: 8px;
+}
+    
    
 </style>
 </head>
@@ -53,52 +59,48 @@
 
     <!-- Dashboard -->
     <li class="active">
-        <a class="dashboard_links " href="../Admin/Admin.php">🏠 Dashboard</a>
+        <a class="dashboard_links " href="../Admin/Admin.php"><i class="fa-solid fa-calendar"></i> Dashboard</a>
     </li>
 
     <!-- Employees -->
     <li class="has-submenu">
-        <a class="dashboard_links" href="#">👥 Employees</a>
+        <a class="dashboard_links" href="#"><i class="fa-solid fa-users"></i> Employees</a>
         <ul class="submenu">
-            <li class="list_menu" ><a href="../signup.php">➕ Add Employee</a></li>
-            <li><a href="../Employee/Employee-table.php">📋 Manage Employees</a></li>
+            <li class="list_menu" ><a href="../signup.php"><i class="fa-solid fa-plus"></i> Add Employee</a></li>
+            <li><a href="../Employee/Employee-table.php"><i class="fa-solid fa-list"></i> Manage Employees</a></li>
         </ul>
     </li>
 
 
     <!-- Recruitment -->
     <li class="has-submenu">
-        <a class="dashboard_links" href="#">📄 Recruitment</a>
+        <a class="dashboard_links" href="#"><i class="fa-solid fa-briefcase"></i> Recruitment</a>
         <ul class="submenu">
-            <li><a href="../Recruitment/add_job.php">➕ Add Job</a></li>
-            <li><a href="../Recruitment/manege_jobs.php">📋 Manage Jobs</a></li>
-            <li><a href="../Recruitment/applications.php">📨 Applications</a></li>
+            <li><a href="../Recruitment/add_job.php"><i class="fa-solid fa-plus"></i> Add Job</a></li>
+            <li><a href="../Recruitment/manege_jobs.php"><i class="fa-solid fa-list"></i> Manage Jobs</a></li>
+            <li><a href="../Recruitment/applications.php"><i class="fa-solid fa-envelope"></i> Applications</a></li>
         </ul>
     </li>
 
     <!-- Payroll -->
     <li class="has-submenu">
-        <a class="dashboard_links" href="#">💰 Payroll</a>
+        <a class="dashboard_links" href="#"><i class="fa-solid fa-money-check-dollar"></i> Payroll</a>
         <ul class="submenu">
-            <li><a href="add_salary.php">➕ Add Salary</a></li>
-            <li><a href="manage_payroll.php">📋 Manage Payroll</a></li>
+            <li><a href="add_salary.php"><i class="fa-solid fa-plus"></i> Add Salary</a></li>
+            <li><a href="manage_payroll.php"><i class="fa-solid fa-list"></i> Manage Payroll</a></li>
         </ul>
     </li>
 
     <!-- Leave -->
     <li class="has-submenu">
-        <a class="dashboard_links" href="#">🛑 Leave</a>
+        <a class="dashboard_links" href="#"><i class="fa-solid fa-ban"></i> Leave</a>
         <ul class="submenu">
-            <li><a href="../leave/Add_leave.php">➕ Leave Request</a></li>
-            <li><a href="manage_leave.php">📋 Manage Leave</a></li>
+            <li><a href="../leave/Add_leave.php"><i class="fa-solid fa-plus"></i> Leave Request</a></li>
+            <li><a href="manage_leave.php"><i class="fa-solid fa-list"></i> Manage Leave</a></li>
         </ul>
     </li>
 
-    <!-- Settings -->
-    <li class="has-submenu">
-        <a class="dashboard_links" href="#">⚙️ Settings</a>
-       
-    </li>
+   
 
 </ul>
 

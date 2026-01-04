@@ -17,14 +17,20 @@ $result=mysqli_query($data, $sql);
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>employee list</title>
   <link rel="stylesheet" href="../../css/style.css">
-  <link rel="stylesheet" href="../font/css/all.css">
-  <link rel="stylesheet" href="../font/css/all.min.css">
-  <script src="../font/js/all.js"></script>
-  <script src="../font/js/all.min.js"></script>
+  <link rel="stylesheet" href="../../font/css/all.css">
+  <link rel="stylesheet" href="../../font/css/all.min.css">
+  <script src="../../font/js/all.js"></script>
+  <script src="../../font/js/all.min.js"></script>
+  <style>
+    .styled-table tbody tr:nth-of-type(even) {
+    background-color: #20cec0ff;
+}
+  </style>
 </head>
 
 <body>
   <div class="admin__pages">
+   
     <header>
      <?php require "../../include_Components/header.php"?>
      
@@ -33,6 +39,7 @@ $result=mysqli_query($data, $sql);
 
     <aside>
      <?php include "../../include_Components/asideBar.php"?>
+
     </aside>
     
     <main>
@@ -41,13 +48,14 @@ $result=mysqli_query($data, $sql);
        
           
           
-            <button class="add-btn"><a href="../components/signup.php">ADD</a></button>
+           
             
          
       
        <h2 style="text-align:center;">Employee List</h2>
-        <table>
+        <table id="employee-table" class="styled-table">
           <tr>
+            <th>ID</th>
             <th>Employee Name</th>
             <th>Email</th>
             <th>phone</th>
@@ -55,7 +63,7 @@ $result=mysqli_query($data, $sql);
             <th>Department</th>
             <th>gender</th>
             <th>password</th>
-            <th>Delete</th>
+            
           </tr>
            <?php
         
@@ -64,6 +72,9 @@ $result=mysqli_query($data, $sql);
        
                 ?>
           <tr>
+            <td>
+              <?php echo "{$info['id']}"?>
+          </td>
             <td>
               <?php echo "{$info['fullname']}"?>
           </td>
@@ -85,9 +96,7 @@ $result=mysqli_query($data, $sql);
             <td>
               <?php echo "{$info['password']}"?>
           </td>
-            <td>
-             
-          </td>
+            
             </tr>
           
           <?php

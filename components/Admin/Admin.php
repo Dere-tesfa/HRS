@@ -1,12 +1,13 @@
 <?php
 session_start();
 if (!isset($_SESSION["name"])) {
-    header("Location: login.php");
+    header("Location: ../login.php");
     exit();
 } elseif (isset($_SESSION["role"]) && $_SESSION["role"] === 'employee') {
-    header("Location: login.php");
+    header("Location: ../login.php");
     exit();
 }
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -14,11 +15,11 @@ if (!isset($_SESSION["name"])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Dashbord</title>
-           <link rel="stylesheet" href="/HRS/css/style.css?v=2">
-    <link rel="stylesheet" href="../../font/css/all.css">
-    <link rel="stylesheet" href="../../font/css/all.min.css">
-    <script src="../../font/js/all.js"></script>
-    <script src="../../font/js/all.min.js"></script>
+        <link rel="stylesheet" href="../../css/style.css?v=2">
+         <link rel="stylesheet" href="../../font/css/all.css">
+  <link rel="stylesheet" href="../../font/css/all.min.css">
+  <script src="../../font/js/all.js"></script>
+  <script src="../../font/js/all.min.js"></script>
 </head>
 
 <body>
