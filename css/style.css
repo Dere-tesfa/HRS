@@ -975,6 +975,10 @@ body {
   color: white;
 }
 
+.admin__body {
+  background-color: lightgrey;
+}
+
 .admin__pages {
   width: 100%;
   height: 100vh;

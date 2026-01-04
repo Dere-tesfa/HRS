@@ -22,7 +22,7 @@ if (!isset($_SESSION["name"])) {
   <script src="../../font/js/all.min.js"></script>
 </head>
 
-<body>
+<body class="admin__body">
 
     <div class="admin__pages">
 
