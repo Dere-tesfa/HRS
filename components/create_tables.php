@@ -69,17 +69,17 @@ $sql[] = "CREATE TABLE IF NOT EXISTS jobs (
     FOREIGN KEY (posted_by) REFERENCES hrsystem(id) ON DELETE SET NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4";
 
-$sql[] = "CREATE TABLE IF NOT EXISTS job_applications (
-    id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-    job_id INT UNSIGNED NOT NULL,
-    fullname VARCHAR(255),
-    email VARCHAR(150),
-    phone VARCHAR(50),
-    resume_path VARCHAR(255),
-    cover_letter TEXT,
-    applied_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (job_id) REFERENCES jobs(id) ON DELETE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4";
+// $sql[] = "CREATE TABLE IF NOT EXISTS job_applications (
+//     id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+//     job_id INT UNSIGNED NOT NULL,
+//     fullname VARCHAR(255),
+//     email VARCHAR(150),
+//     phone VARCHAR(50),
+//     resume_path VARCHAR(255),
+//     cover_letter TEXT,
+//     applied_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+//     FOREIGN KEY (job_id) REFERENCES jobs(id) ON DELETE CASCADE
+// ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4";
 
 $sql[] = "CREATE TABLE IF NOT EXISTS job_applications_raw (
       id INT AUTO_INCREMENT PRIMARY KEY,

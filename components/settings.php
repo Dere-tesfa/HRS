@@ -137,7 +137,7 @@ if ($stmt->errno) {
     <input type="password" id="confirm_password" name="confirm_password" required><br>
 
     <input class="form-submit" type="submit" value="Change Password">
-    <button class="form-back"><a href="Employee-dashboard.php">Back to Dashboard</a></button>
+    <!-- <button class="form-back"><a href="Employee-dashboard.php">Back to Dashboard</a></button> -->
 </form>
 </body>
 </html>
