@@ -64,9 +64,6 @@ if ($employee_id) {
                 <li> <i class="fa-solid fa-user dashboard_icons
                         "></i><a class="dashboard_links
                         " href="./Employee-profile.php">Profile</a></li>
-                <li> <i class="fa-solid fa-clipboard-user dashboard_icons
-                        "></i><a class="dashboard_links
-                        " href="#">Attendance</a></li>
                 <li> <i class="fa-brands fa-paypal dashboard_icons
                         "></i><a class="dashboard_links
                         " href="#">Payroll</a></li>
@@ -90,13 +87,12 @@ if ($employee_id) {
                                                 </div>
                                         </div>
                                 </a>
-
-                                <a class="card-link" href="leave/Add_leave.php">
+                                <a class="card-link" href="leave/leave_status.php">
                                         <div class="card">
                                                 <div class="card-icon card-icon--accent"><i class="fa-solid fa-calendar-days"></i></div>
                                                 <div class="card-body">
-                                                        <h3>Request Leave</h3>
-                                                        <p><?php echo (int)$pendingLeaves; ?> pending request(s)</p>
+                                                        <h3>My Leave requests</h3>
+                                                        <p>You have <?php echo $pendingLeaves; ?> pending leave request<?php echo $pendingLeaves !== 1 ? 's' : ''; ?>.</p>
                                                 </div>
                                         </div>
                                 </a>
@@ -112,15 +108,7 @@ if ($employee_id) {
                                 </a>
                         </div>
 
-                        <div class="actions-panel">
-                                <h2>Things you can do</h2>
-                                <ul class="actions-list">
-                                        <li><a class="action-link" href="Employee-profile.php">View / Edit Profile</a></li>
-                                        <li><a class="action-link" href="leave/Add_leave.php">Request Leave</a></li>
-                                        <li><a class="action-link" href="leave/">My Leaves</a></li>
-                                        <li><a class="action-link" href="../components/Recruitment/viewAdd_job.php">View Jobs</a></li>
-                                </ul>
-                        </div>
+        
                 </div>
         </main>
         </body>

@@ -126,7 +126,7 @@ if (!isset($_SESSION["name"])) {
                 <div class="entity-stat">34</div>
                 <p class="entity-label">Pending Requests</p>
                 <div class="entity-actions">
-                    <a class="btn" href="../leave/manage_leave.php">View</a>
+                    <a class="btn" href="../Admin/admin_leave_requests.php">View</a>
                   
                 </div>
             </div>

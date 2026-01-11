@@ -69,10 +69,14 @@
             border-radius: 5px;
             cursor: pointer;
             font-size: 16px;
+            margin-left: 20px;
         }
-
+button a {
+            text-decoration: none;
+            color: white;
+        }
         button:hover {
-            background: #0056b3;
+            background: #588fcbff;
         }
     </style>
 </head>
@@ -85,12 +89,12 @@
     ?>
 
     <?php if (!empty($leave_errors)): ?>
-        <div style="color:#b00020;margin-bottom:12px;">
+        <div style="color:#b00020;margin-bottom:12px;font-size:26px;text-align:center;">
             <?php foreach ($leave_errors as $e) echo '<div>' . htmlspecialchars($e) . '</div>'; ?>
         </div>
     <?php endif; ?>
     <?php if (!empty($leave_success)): ?>
-        <div style="color:green;margin-bottom:12px;">
+        <div style="color:green;margin-bottom:12px;font-size:26px;text-align:center;">
             <?php echo htmlspecialchars($leave_success); ?>
         </div>
     <?php endif; ?>
@@ -135,6 +139,7 @@
 
         <div class="form-actions">
             <button type="submit">Submit Request</button>
+             <button type="submit"><a href="../Employee-dashboard.php">Cancel</a></button>
         </div>
 
     </form>

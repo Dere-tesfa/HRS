@@ -50,26 +50,23 @@ $hire_date = $row['hire_date'] ?? '';
                 <?php include_once __DIR__ . '/../include_Components/header.php'; ?>
         </header>
         <div class="employee_page_container">
-                <aside class="employee_dashboard">
-                        <ul class="employee_main_page">
-                                <li> <i class="fa-solid fa-city dashboard_icons
-                          "></i><a class="dashboard_links
-                          " href="Employee-dashboard.php">Dashboard</a></li>
-                                </li>
-                                <li class="active"> <i class="fa-solid fa-user dashboard_icons
-                          "></i><a class="dashboard_links
-                          " href="./Employee-profile.php">Profile</a></li>
-                                <li> <i class="fa-solid fa-clipboard-user dashboard_icons
-                          "></i><a class="dashboard_links
-                          " href="#">Attendance</a></li>
-                                <li> <i class="fa-brands fa-paypal dashboard_icons
-                          "></i><a class="dashboard_links
-                          " href="#">Payroll</a></li>
-                                <li> <i class="fa-solid fa-ban dashboard_icons
-                          "></i><a class="dashboard_links
-                          " href="#">Leave</a></li>
-                        </ul>
-                </aside>
+              <aside class="employee_dashboard">
+            <ul class="employee_main_page">
+                <li class="active"> <i class="fa-solid fa-city dashboard_icons
+                        "></i><a class="dashboard_links
+                        " href="Employee-dashboard.php">Dashboard</a></li>
+               </li>
+                <li> <i class="fa-solid fa-user dashboard_icons
+                        "></i><a class="dashboard_links
+                        " href="./Employee-profile.php">Profile</a></li>
+                <li> <i class="fa-brands fa-paypal dashboard_icons
+                        "></i><a class="dashboard_links
+                        " href="#">Payroll</a></li>
+                <li> <i class="fa-solid fa-ban dashboard_icons
+                        "></i><a class="dashboard_links
+                        " href="../components/leave/Add_leave.php">Leave</a></li>
+            </ul>
+        </aside>
                 <div class="employee_profile_container">
                         <h2>Employee Profile Page</h2>
                         <p>Welcome to your profile page. Here you can view and update your personal information.</p>
@@ -115,8 +112,7 @@ $hire_date = $row['hire_date'] ?? '';
                                                 </div>
                                         </form>
                                 <?php else: ?>
-                                        <h3><?php echo htmlspecialchars($fullname); ?></h3>
-                                        <p><strong>Name:</strong> <?php echo htmlspecialchars($fullname); ?></p>
+                                        <h3><?php echo htmlspecialchars($fullname); ?></h3> <br>
                                         <p><strong>Email:</strong> <?php echo htmlspecialchars($email); ?></p>
                                         <p><strong>Department:</strong> <?php echo htmlspecialchars($department); ?></p>
                                         <?php if ($hire_date): ?>

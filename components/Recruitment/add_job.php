@@ -128,7 +128,7 @@ input[type="file"] {
 button {
     grid-column: span 2;
     padding: 12px;
-    background: #007bff;
+    background: #03afbcff;
     border: none;
     color: #fff;
     font-size: 16px;
@@ -141,7 +141,10 @@ button {
 button:hover {
     background: #0056b3;
 }
-
+.back-btn a{
+text-decoration: none;
+color: white;
+}
 /* Responsive */
 @media (max-width: 600px) {
     form {
@@ -159,6 +162,8 @@ button:hover {
 </head>
 <body>
    <div class="add_container">
+    <button class="back-btn" type="submit"><a href="../Admin/Admin.php">Back</a></button>
+
     <div class="add_content">
         <h2>Add New Job</h2>
         <p>Fill in the job details below</p>

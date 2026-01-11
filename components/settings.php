@@ -13,54 +13,62 @@ if (session_status() === PHP_SESSION_NONE) {
  
 
 if (!empty($_SESSION['user_id'])) {
+
     $userId = (int) $_SESSION['user_id'];
-    $stmt = $mysqli->prepare('SELECT password FROM hrsystem WHERE id = ? LIMIT 1');
+
+    // Fetch current password
+    $stmt = $mysqli->prepare("SELECT password FROM hrsystem WHERE id = ? LIMIT 1");
+    if (!$stmt) {
+        die("Prepare failed: " . $mysqli->error);
+    }
+
     $stmt->bind_param('i', $userId);
     $stmt->execute();
     $res = $stmt->get_result();
     $row = $res->fetch_assoc();
-    $stmt->execute();
-    
-if ($stmt->errno) {
-    echo 'Error executing the query: ' . $stmt->error;
-}
     $stmt->close();
 
+    if (!$row) {
+        die("User not found.");
+    }
 
-    if (!empty($_POST['current_password']) && !empty($_POST['new_password']) && !empty($_POST['confirm_password'])) {
+    if (!empty($_POST['current_password']) &&
+        !empty($_POST['new_password']) &&
+        !empty($_POST['confirm_password'])) {
+
         $currentPassword = $_POST['current_password'];
-        $newPassword = $_POST['new_password'];
+        $newPassword     = $_POST['new_password'];
         $confirmPassword = $_POST['confirm_password'];
 
-        if (password_verify($currentPassword, $row['password'])) {
-            if ($newPassword === $confirmPassword) {
-                $hashedPassword = password_hash($newPassword, PASSWORD_DEFAULT);
-                $stmt = $mysqli->prepare('UPDATE hrsystem SET password = ? WHERE user_id = ?');
-                $stmt->bind_param('si', $hashedPassword, $userId);
-                $stmt->execute();
-                $stmt->close();
-
-                header('Location: ../components/login.php');
-                exit;
-            } else {
-                $_SESSION['errors'][] = 'New password and confirm password do not match';
-            }
-        } else {
+        if (!password_verify($currentPassword, $row['password'])) {
             $_SESSION['errors'][] = 'Current password is incorrect';
+        } elseif ($newPassword !== $confirmPassword) {
+            $_SESSION['errors'][] = 'New password and confirm password do not match';
+        } else {
+            $hashedPassword = password_hash($newPassword, PASSWORD_DEFAULT);
+
+            $stmt = $mysqli->prepare("UPDATE hrsystem SET password = ? WHERE id = ?");
+            if (!$stmt) {
+                die("Prepare failed: " . $mysqli->error);
+            }
+
+            $stmt->bind_param('si', $hashedPassword, $userId);
+            $stmt->execute();
+            $stmt->close();
+
+            header('Location: login.php');
+            exit;
         }
     }
-} else {
-    header('Location: ../components/login.php');
-    exit;
 }
-
-
-
 ?>
-
 <html>
 <head>
     <title>Change Password</title>
+       <link rel="stylesheet" href="../../font/css/all.css">
+  <link rel="stylesheet" href="../../font/css/all.min.css">
+  <script src="../../font/js/all.js"></script>
+  <script src="../../font/js/all.min.js"></script>
 <style>
     h1 {
         margin-top: 150px;
@@ -122,10 +130,27 @@ if ($stmt->errno) {
         font-weight: bold;
         text-align: center;
     }
+     .back-btn{
+            background: #04b8a0ff;
+            color: #fff;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 18px;
+            margin-bottom: 20px;
+            margin-left: 30px;
+        }
+        .back-btn a {
+            text-decoration: none;
+            color: white;
+        }
 </style>
 </head>
 <body>
-    <h1>Change Password</h1>
+    
+<button class="back-btn" type="submit"><a href="../components/login.php"> <i class="fa fa-arrow-left"></i>Back</a></button>
+<h1>Change Password</h1>
 <form class="settings-form" method="POST" action="">
     <label for="current_password">Current Password:</label>
     <input type="password" id="current_password" name="current_password" required><br>
@@ -137,8 +162,8 @@ if ($stmt->errno) {
     <input type="password" id="confirm_password" name="confirm_password" required><br>
 
     <input class="form-submit" type="submit" value="Change Password">
-    <!-- <button class="form-back"><a href="Employee-dashboard.php">Back to Dashboard</a></button> -->
 </form>
+
 </body>
 </html>
 <?php

@@ -53,7 +53,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         } else {
             echo "<script>alert('Database error: submission failed');</script>";
         }
-
     } else {
         echo "<script>alert('File upload failed');</script>";
     }
@@ -62,61 +61,122 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Job Application Form</title>
-<style>
-* { margin:0; padding:0; box-sizing:border-box; font-family:Arial,sans-serif; }
-body { background:#f4f6f8; display:flex; justify-content:center; align-items:center; min-height:100vh; }
-.job_Application { background:#fff; padding:30px 40px; border-radius:12px; width:100%; max-width:600px; box-shadow:0 6px 15px rgba(0,0,0,0.1);}
-h1,h3{text-align:center;}
-form { display:flex; flex-direction:column; gap:15px;}
-.form-group { display:flex; flex-direction:column; }
-label { margin-bottom:5px; font-weight:bold;}
-input,textarea { padding:10px; border-radius:6px; border:1px solid #ccc; }
-button { padding:12px; background:#16dbd1ff; color:#fff; border:none; border-radius:6px; cursor:pointer;}
-button:hover { background:#13b9b9; }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Application Form</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #f4f6f8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .job_Application {
+            background: #fff;
+            padding: 30px 40px;
+            border-radius: 12px;
+            width: 100%;
+            max-width: 600px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        h1,
+        h3 {
+            text-align: center;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input,
+        textarea {
+            padding: 10px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            padding: 12px;
+            background: #12b4acff;
+            color: #fff;
+            border: none;
+            font-weight: bold;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #13b9b9;
+        }
+        .back-btn a{
+color: white;
+text-decoration: none;       }
+    </style>
 </head>
+
 <body>
+    <div class="job_Application">
+        <button class="back-btn" type="submit"><a href="../Employee-dashboard.php">Back</a></button>
+        <h1>Job Application</h1>
+        <h3>Please fill out the form</h3>
 
-<div class="job_Application">
-<h1>Job Application</h1>
-<h3>Please fill out the form</h3>
-
-<form method="POST" enctype="multipart/form-data">
-    <div class="form-group">
-        <label>First Name</label>
-        <input type="text" name="fname" required>
+        <form method="POST" enctype="multipart/form-data">
+            <div class="form-group">
+                <label>First Name</label>
+                <input type="text" name="fname" required>
+            </div>
+            <div class="form-group">
+                <label>Last Name</label>
+                <input type="text" name="lname" required>
+            </div>
+            <div class="form-group">
+                <label>Email</label>
+                <input type="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label>Phone</label>
+                <input type="tel" name="phone" required>
+            </div>
+            <div class="form-group">
+                <label>Applied Position</label>
+                <input type="text" name="appliedPosition" required>
+            </div>
+            <div class="form-group">
+                <label>Cover Letter</label>
+                <textarea name="coverletter" required></textarea>
+            </div>
+            <div class="form-group">
+                <label>Upload Resume</label>
+                <input type="file" name="uploadresume" accept=".pdf,.doc,.docx" required>
+            </div>
+            <button type="submit">Submit</button>
+        </form>
     </div>
-    <div class="form-group">
-        <label>Last Name</label>
-        <input type="text" name="lname" required>
-    </div>
-    <div class="form-group">
-        <label>Email</label>
-        <input type="email" name="email" required>
-    </div>
-    <div class="form-group">
-        <label>Phone</label>
-        <input type="tel" name="phone" required>
-    </div>
-    <div class="form-group">
-        <label>Applied Position</label>
-        <input type="text" name="appliedPosition" required>
-    </div>
-    <div class="form-group">
-        <label>Cover Letter</label>
-        <textarea name="coverletter" required></textarea>
-    </div>
-    <div class="form-group">
-        <label>Upload Resume</label>
-        <input type="file" name="uploadresume" accept=".pdf,.doc,.docx" required>
-    </div>
-    <button type="submit">Submit</button>
-</form>
-</div>
 
 </body>
+
 </html>

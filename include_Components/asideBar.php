@@ -96,8 +96,7 @@
     <li class="has-submenu">
         <a class="dashboard_links" href="#"><i class="fa-solid fa-ban"></i> Leave</a>
         <ul class="submenu">
-           
-            <li><a href="manage_leave.php"><i class="fa-solid fa-list"></i> Manage Leave</a></li>
+           <li><a href="../Admin/admin_leave_requests.php"><i class="fa-solid fa-check"></i> manage Leaves requests</a></li>
         </ul>
     </li>
 
