@@ -66,7 +66,7 @@ if ($employee_id) {
                         " href="./Employee-profile.php">Profile</a></li>
                 <li> <i class="fa-brands fa-paypal dashboard_icons
                         "></i><a class="dashboard_links
-                        " href="#">Payroll</a></li>
+                        " href="../components/Employee/my_payroll.php"> My Payroll</a></li>
                 <li> <i class="fa-solid fa-ban dashboard_icons
                         "></i><a class="dashboard_links
                         " href="../components/leave/Add_leave.php">Leave</a></li>

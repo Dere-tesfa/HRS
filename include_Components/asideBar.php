@@ -87,8 +87,8 @@
     <li class="has-submenu">
         <a class="dashboard_links" href="#"><i class="fa-solid fa-money-check-dollar"></i> Payroll</a>
         <ul class="submenu">
-            <li><a href="add_salary.php"><i class="fa-solid fa-plus"></i> Add Salary</a></li>
-            <li><a href="manage_payroll.php"><i class="fa-solid fa-list"></i> Manage Payroll</a></li>
+            <li><a href="add_payroll.php"><i class="fa-solid fa-plus"></i> Add payroll</a></li>
+            <li><a href="payroll_list.php"><i class="fa-solid fa-list"></i> Manage Payroll</a></li>
         </ul>
     </li>
 
